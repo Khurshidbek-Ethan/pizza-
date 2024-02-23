@@ -6,3 +6,4 @@
 // const currentTime = moment().format("YYYY,MM,DD")
 // console.log(currentTime);
 
+// xar qanday 
