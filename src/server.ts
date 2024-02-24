@@ -6,4 +6,14 @@
 // const currentTime = moment().format("YYYY,MM,DD")
 // console.log(currentTime);
 
-// xar qanday 
+///////////////////////////////////////
+
+import dotenv from 'dotenv';
+dotenv.config();
+// console.log("PORT:",process.env.PORT); 
+
+// console.log("MONGO_URL:",process.env.MONGO_URL); 
+
+
+
+
