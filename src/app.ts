@@ -1,6 +1,6 @@
 import express from 'express';
-import { loadavg } from 'os';
 import path from 'path';
+import router from "./router"
 
 /**  1-ENTRANCE  **/
 const app = express();
@@ -19,5 +19,8 @@ app.set('view engine','ejs');
 
 
 /**  4-ROUTERS  **/
+
+app.use("/",router);
+
 
 export default app;
