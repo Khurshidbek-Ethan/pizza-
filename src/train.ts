@@ -1,11 +1,13 @@
-function getPositive(arr) {
-  let positiveNums = arr.filter( num > 0);
-  let result = positiveNums.length > 0 ? positiveNums.join('') : '';
-  return result;
+function getPositive(arr: number[]) {
+  return arr.reduce((result: string, num: number) => {
+    if (num > 0) {
+      result += num.toString();
+    }
+    return result;
+  }, "");
 }
-
-// Test
-console.log(getPositive([1, -4, 2])); // Output: "12"
+const result = getPositive([1, -4, 2]);
+console.log(result);
 
 
 
