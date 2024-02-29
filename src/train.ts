@@ -3,14 +3,18 @@
 - Naming standards
 function , method ,variable =>CAMEL     goHome
 class => PASCAL                        MemberService
-folder =>KEBAB
+folder,file =>KEBAB
 css => SNAKE                           button_style
 -ERROR handling
 
-
-
 */
 
+/**
+ Traditinal API = API
+ Rest API
+ GraphQL API
+
+ */
 
 
 
