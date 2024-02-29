@@ -1,13 +1,38 @@
-function getPositive(arr: number[]) {
-  return arr.reduce((result: string, num: number) => {
-    if (num > 0) {
-      result += num.toString();
-    }
-    return result;
-  }, "");
-}
-const result = getPositive([1, -4, 2]);
-console.log(result);
+/*  Project Standards
+-Loggin standards
+- Naming standards
+function , method ,variable =>CAMEL     goHome
+class => PASCAL                        MemberService
+folder =>KEBAB
+css => SNAKE                           button_style
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function getPositive(arr: number[]) {
+//   return arr.reduce((result: string, num: number) => {
+//     if (num > 0) {
+//       result += num.toString();
+//     }
+//     return result;
+//   }, "");
+// }
+// const result = getPositive([1, -4, 2]);
+// console.log(result);
 
 
 
