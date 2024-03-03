@@ -13,8 +13,8 @@ export interface Member {
     memberDesc?:string;
     memberImage?:string;
     memberPoints:number;
-    createAt:Date;
-    updateAt:Date;
+    createdAt:Date;
+    updatedAt:Date;
 }
 
 
@@ -30,4 +30,9 @@ export interface MemberInput{
     memberImage?:string;
     memberPoints?:number;
 
+}
+
+export interface LoginInput{
+    memberNick:string;
+    memberPassword:string; 
 }

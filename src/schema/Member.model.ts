@@ -12,6 +12,7 @@ memberType: {
     enum:MemberStatus,
     default: MemberStatus.ACTIVE,
     
+    
  },
 
  memberNick:{
