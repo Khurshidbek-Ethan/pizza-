@@ -1,4 +1,4 @@
-
+// 18:50
 /* I-TASK: 
 
 Shunday function tuzing, unga string argument pass bolsin. 
