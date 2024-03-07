@@ -1,4 +1,11 @@
-// 18:50
+
+/** 
+ Tradition Frontend Developmet =>BSSR =>EJS Wramework
+ Modern Frontend Developent => SPA => REACT 
+*/
+
+
+
 /* I-TASK: 
 
 Shunday function tuzing, unga string argument pass bolsin. 
