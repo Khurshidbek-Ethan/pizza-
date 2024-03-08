@@ -1,8 +1,34 @@
-
 /** 
  Tradition Frontend Developmet =>BSSR =>EJS Wramework
  Modern Frontend Developent => SPA => REACT 
 */
+
+/* J-TASK: 
+
+Shunday function yozing, 
+u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
+MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
+
+@MITASK
+*/
+
+function findLongestWord(str: any) {
+  // Split the string into array
+  let strSplit = str.split(" ");
+  // Return the first sorted item of the Array
+  return strSplit.sort((a: any, b: any) => b.length - a.length)[0];
+}
+const result = findLongestWord("I come from Uzbekistan");
+console.log("result:", result);
+
+
+
+
+
+
+
+
+
 
 
 
@@ -14,13 +40,13 @@ MASALAN: getDigits("m14i1t") return qiladi "141"
 
 @MITASK */
 
-function getDigits(str: string) {
-    let num_str = str.replace(/[^0-9]/g, "");
-    return parseInt(num_str);
-  }
+// function getDigits(str: string) {
+//     let num_str = str.replace(/[^0-9]/g, "");
+//     return parseInt(num_str);
+//   }
   
-  const result = getDigits("m14i1t");
-  console.log(result);
+//   const result = getDigits("m14i1t");
+//   console.log(result);
   
 
 
