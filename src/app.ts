@@ -12,7 +12,7 @@ import ConnectMongoDB from "connect-mongodb-session";
 const MongoDBStore = ConnectMongoDB(session);
 const store = new MongoDBStore({
     uri:String(process.env.MONGO_URL) ,
-    collection: 'sessions',
+    collection: "sessions",
   });
 
 

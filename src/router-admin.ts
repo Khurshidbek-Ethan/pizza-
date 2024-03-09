@@ -10,6 +10,8 @@ routerAdmin
 routerAdmin.
 get('/signup',restaurantController.getSignup)
 .post("/signup",restaurantController.processSignup);
+routerAdmin.get('/logout',restaurantController.logout);
+// sessionni tozalab berish kerak boladi
 
 routerAdmin.get('/check-me',restaurantController.checkAuthSession);
 

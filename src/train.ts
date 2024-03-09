@@ -76,6 +76,11 @@ css => SNAKE                           button_style
 
  */
 
+/**
+ * session
+request join req oziga joylashvoladi 
+ self destroy ozini ozi
+ */
 
 
 
