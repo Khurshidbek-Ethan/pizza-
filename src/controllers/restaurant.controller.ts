@@ -63,6 +63,8 @@ restaurantController.getLogin = (req:Request,res:Response)=>{
     req.session.member = result;
    req.session.save(function(){
     res.send(result);
+    // console.log("result:",result);
+    
    });
  } catch(err){
       
@@ -144,20 +146,17 @@ restaurantController.checkAuthSession = async (
     res:Response,
     next: NextFunction
    ) => {
-    try{
+    
      if(req.session?.member?.memberType === MemberType.RESTAURANT){
       req.member = req.session.member;
       next();
-     }
-
-    }catch(err){
+     }else{
       const message = Message. NOT_AUTHENTICATED;
       res.send(` <script> alert("${message}");window.location.replace("/admin/login")</script>`);
 
-    }
+     }
+
    };
-
-
 
  export default restaurantController;
 
