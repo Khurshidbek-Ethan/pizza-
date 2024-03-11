@@ -23,7 +23,7 @@ routerAdmin.get('/logout',restaurantController.logout);
 // sessionni tozalab berish kerak boladi
 
 
-routerAdmin.get('/check-me',restaurantController.checkAuthSession);
+routerAdmin.get("/check-me",restaurantController.checkAuthSession);
 
 /** Product  */
 routerAdmin.get('/product/all',

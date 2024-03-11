@@ -58,6 +58,7 @@ restaurantController.getLogin = (req:Request,res:Response)=>{
      const newMember: MemberInput = req.body;
      newMember.memberType = MemberType.RESTAURANT;
      const result = await memberService.processSignup(newMember);
+     
     // SESSIONS AUTHENTICATION
 
     req.session.member = result;
