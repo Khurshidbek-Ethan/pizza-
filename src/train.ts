@@ -29,7 +29,7 @@ css => SNAKE                           button_style
 
 */
 
-/**
+/** Resquest:
  Traditinal API = API
  Rest API
  GraphQL API
@@ -37,14 +37,28 @@ css => SNAKE                           button_style
  */
 
 /**
- * session
+ * session/cookies
 request join req oziga joylashvoladi 
  self destroy ozini ozi
  */
-/** 
+/**  Frontend developmant
  Tradition Frontend Developmet =>BSSR =>EJS Wramework
  Modern Frontend Developent => SPA => REACT 
 */
+
+/** 
+datalarni togri kiritiyotganini tekshireydigon valideshinlar 
+Validation:
+Frontend validation -> frontendda togri kiritilyotganini tekshirish validation 
+Backend validation -> Backend 
+Database validation -> 
+Burakda 3 ta validationdan foydalaniladi 
+/
+Pipe ->serverga kirish oraligidagi buni Pipelar bn amalga oshirishimiz mumkin 
+/
+*/
+
+
 
 
 /* J-TASK: 
