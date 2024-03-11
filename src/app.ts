@@ -31,7 +31,7 @@ app.use(
     session({
         secret:String(process.env.SESSION_SECRET),
   cookie: {
-    maxAge: 1000 * 3600 * 3, // 3hr
+    maxAge: 1000 * 20, // 3hr
   },
   store: store,
   resave: true,// 12:00 =>15:00// folse // 10:30 auth =>13:30 ,12:00, 13:31 yoqoladi

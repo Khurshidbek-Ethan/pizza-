@@ -1,4 +1,4 @@
-import {NextFunction, Request,Response} from "express";
+import {NextFunction, Request, Response} from "express";
 import {T} from "../libs/types/common";
 import MemberService from "../models/Member.service";
 import {AdminRequest, LoginInput, MemberInput} from "../libs/types/member"
@@ -109,9 +109,11 @@ restaurantController.logout = async (
   req:AdminRequest,
   res:Response
   )=>{
+    console.log("arrived here")
    try{
      console.log('logout ');
-    req.session.destroy(function(){
+    req.session.destroy(function () {
+      console.log("arrived here 1")
       res.redirect("/admin");
     })
 
