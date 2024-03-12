@@ -1,4 +1,4 @@
-// 25:38
+
 
 // Shunday function yozing, u string qabul qilsin 
 // va string ichidagi unli harflar sonini qaytarsin.
