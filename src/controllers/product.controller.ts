@@ -18,9 +18,11 @@ const  productController:T = {};
 productController.getAllProducts = async (req:Request,res:Response)=>{
     try{
       console.log('getAllProducts');
-      // console.log("req.member",req.member); korish un AdminReq chaqirgan edik test maqsadda 
+     const data = await productService.getAllProducts();
+   //   console.log("data:",data);
+     
       
-      res.render("products");
+      res.render("products",{products: data});
   } catch(err){
        
      console.log("Error,getAllProducts:",err);
