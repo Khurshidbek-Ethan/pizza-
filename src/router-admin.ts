@@ -15,7 +15,7 @@ routerAdmin
 routerAdmin
    .get('/signup',restaurantController.getSignup)
    .post("/signup",
-   makeUploader("members").single("memberImage"),
+   makeUploader("members").single("memberImage"),//
    restaurantController.processSignup);
 
 
@@ -31,7 +31,7 @@ restaurantController.verifyRestaurant,
 productController.getAllProducts
 );
 
-routerAdmin.post('/product/create',
+routerAdmin.post("/product/create",
 restaurantController.verifyRestaurant,
 makeUploader("products").array("productImages",5),
 productController.createNewProduct

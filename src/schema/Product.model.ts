@@ -37,14 +37,13 @@ const productSchema = new Schema(
   },
 
    productVolume:{
-    type:String,
+    type:Number,
     enum:ProductVolume,
     default: ProductVolume.ONE,
   },
   
     productDesc:{
      type:String,
-     required:true,
    },
 
     productImages:{
@@ -62,7 +61,8 @@ const productSchema = new Schema(
  {timestamps:true} // updateAt, createAt
 );
 
-productSchema.index({productName:1, productSize:1,productVolume:1},
+productSchema.index(
+  {productName:1, productSize:1,productVolume:1},
      {unique:true})
 
 export default mongoose.model('Product',productSchema);

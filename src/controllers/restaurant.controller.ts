@@ -53,13 +53,17 @@ restaurantController.getLogin = (req:Request,res:Response)=>{
   res:Response
   )=>{
    try{
-     console.log('processSignup');
-    const file = req.file;
-    if(!file) throw new Errors(HttpCode.BAD_REQUEST,Message.SOMETHING_WENT_WRONG);
+
+       console.log('processSignup');
+ 
+    const file = req.file; //
+    console.log("file:",file);
+    if(!file) 
+    throw new Errors(HttpCode.BAD_REQUEST,Message.SOMETHING_WENT_WRONG);
+    // agar filimiz yuklanmagan bolsa 
     
      const newMember: MemberInput = req.body;
-    newMember.memberImage = file?.path;
-
+    newMember.memberImage = file?.path; //
      newMember.memberType = MemberType.RESTAURANT;
      const result = await memberService.processSignup(newMember);
      
@@ -67,14 +71,14 @@ restaurantController.getLogin = (req:Request,res:Response)=>{
 
     req.session.member = result;
    req.session.save(function(){
-    res.redirect("/admin/product/all");
+    res.redirect("/admin/product/all");//
    });
- } catch(err){
+ } catch(err){//
       
-   console.log("Error,processSignup:",err);
+   console.log("Error,processSignup:",err);//
    const message = 
-   err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
-   res.send(`<script> alert("${message}"); window.location.replace('admin/signup') </script>`);
+   err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;//
+   res.send(`<script> alert("${message}"); window.location.replace('admin/signup') </script>`);//
 
 
 
@@ -89,7 +93,7 @@ restaurantController.getLogin = (req:Request,res:Response)=>{
   )=>{
    try{
      console.log('processLogin');
-    //  console.log("body",req.body);
+     console.log("body",req.body);
      const input:LoginInput=req.body;
      const result = await memberService.processLogin(input);
     // SESSIONS AUTHENTICATION
@@ -151,13 +155,14 @@ restaurantController.checkAuthSession = async (
     res:Response,
     next: NextFunction
    ) => {
+    // console.log("req.body",req.body);
     
      if(req.session?.member?.memberType === MemberType.RESTAURANT){
       req.member = req.session.member;
       next();
      }else{
       const message = Message. NOT_AUTHENTICATED;
-      res.send(` <script> alert("${message}");window.location.replace("/admin/login")</script>`);
+      res.send(` <script> alert("${message}");window.location.replace("/admin/login");</script>`);
 
      }
 

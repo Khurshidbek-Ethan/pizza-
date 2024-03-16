@@ -1,18 +1,18 @@
- 
- 
-function reverseSentence(sentence: string) {
-  const arr = sentence.split(" ")
-  let newSentence = ""
 
-  for (let word of arr) {
-    if (word) {
-      newSentence = newSentence + word.split('').reverse().join('').replace(/[.,!@?#$%^&*s]/g, '') + " ";
-    }
-  }
-  return newSentence;
-}
+ 
+// function reverseSentence(sentence: string) {
+//   const arr = sentence.split(" ")
+//   let newSentence = ""
 
-console.log(reverseSentence("we like coding!?"))
+//   for (let word of arr) {
+//     if (word) {
+//       newSentence = newSentence + word.split('').reverse().join('').replace(/[.,!@?#$%^&*s]/g, '') + " ";
+//     }
+//   }
+//   return newSentence;
+// }
+
+// console.log(reverseSentence("we like coding!?"))
  
  
  /*  Project Standards
