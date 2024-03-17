@@ -45,5 +45,10 @@ productController.updateChosenProduct
 // :id=>parram deyiladi
 
 
-/** User */
+/** User  Member*/
+
+routerAdmin.get("/user/all",restaurantController.verifyRestaurant,restaurantController.getUsers)
+
+
+
     export default routerAdmin;
