@@ -55,7 +55,8 @@ restaurantController.getLogin = (req:Request,res:Response)=>{
    try{
 
        console.log('processSignup');
- 
+   console.log("req.body:",req.body);
+   
     const file = req.file; //
     console.log("file:",file);
     if(!file) 

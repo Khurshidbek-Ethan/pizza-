@@ -1,10 +1,18 @@
-function getSquareNumbers(numbers: number[]) {
-  return numbers.map(ele => { return { number: ele, square: ele * ele } })
+function palindromCheck(word: string) {
+  const word2: string = word.split('').reverse().join('').toString()
+  return word === word2
 }
 
-const result = getSquareNumbers([1, 2, 3]);
-console.log(result);
-console.log("typeof result:", typeof result)
+console.log(palindromCheck("dad"))
+console.log(palindromCheck("son"))
+
+// function getSquareNumbers(numbers: number[]) {
+//   return numbers.map(ele => { return { number: ele, square: ele * ele } })
+// }
+
+// const result = getSquareNumbers([1, 2, 3]);
+// console.log(result);
+// console.log("typeof result:", typeof result)
  
 // function reverseSentence(sentence: string) {
 //   const arr = sentence.split(" ")
