@@ -15,7 +15,7 @@ class ProductService {
      
 
 
-                      /** SSR */
+                      /** SSR Adminka loyiha un */
   
     public async getAllProducts(): Promise <Product[]> {
        const result = await this.productModel.find ().exec();
@@ -29,8 +29,8 @@ class ProductService {
     
 
 
-    public async createNewProduct(input:ProductInput ): Promise <Product> {
-        try{
+    public async createNewProduct(input:ProductInput ): Promise <Product> { 
+        try{ 
             return await this.productModel.create(input);
          }catch(err){
             console.log("Error, model: createNewProduct:",err);
@@ -50,6 +50,7 @@ class ProductService {
        if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 
     //    console.log("result:",result);
+
        return result ;
        
     }
