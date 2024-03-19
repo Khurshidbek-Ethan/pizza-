@@ -1,10 +1,34 @@
-function palindromCheck(word: string) {
-  const word2: string = word.split('').reverse().join('').toString()
-  return word === word2
+// *** O - TASK ***
+// Shunday function yozing, u har xil valuelardan iborat array qabul qilsin
+// va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
+// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
+
+function calculateSumOfNumbers(array: any[]): number {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === "number") {
+      sum += array[i];
+      // quyidagi mantiq ma'lum bir elementning son emasligini aniqlaydi.
+    } else if (typeof array[i] !== "string" && !isNaN(parseFloat(array[i]))) {
+      sum += parseFloat(array[i]);
+    }
+  }
+  return sum;
 }
 
-console.log(palindromCheck("dad"))
-console.log(palindromCheck("son"))
+const array_list = [10, "10", {son: 10}, true, 35];
+const result = calculateSumOfNumbers(array_list);
+
+console.log(result);
+
+
+// function palindromCheck(word: string) {
+//   const word2: string = word.split('').reverse().join('').toString()
+//   return word === word2
+// }
+
+// console.log(palindromCheck("dad"))
+// console.log(palindromCheck("son"))
 
 // function getSquareNumbers(numbers: number[]) {
 //   return numbers.map(ele => { return { number: ele, square: ele * ele } })
