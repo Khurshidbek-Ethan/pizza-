@@ -59,9 +59,11 @@ restaurantController.getLogin = (req:Request,res:Response)=>{
    
     const file = req.file; //
     console.log("file:",file);
-    if(!file) 
+     if(!file) 
     throw new Errors(HttpCode.BAD_REQUEST,Message.SOMETHING_WENT_WRONG);
     // agar filimiz yuklanmagan bolsa 
+      // throw new Error("Forced Quit")
+
     
      const newMember: MemberInput = req.body;
     newMember.memberImage = file?.path; //

@@ -1,6 +1,3 @@
-
-26:31
-
 console.log("Signup frontend javascript file");
 
   $(function () {});
@@ -18,8 +15,13 @@ function validateSignupForm() {
   memberPassword ===" " ||
   confirmPassword === " "
 ){
-    alert("Please insert all required inputs");
+    alert("Please insert all required inputs!");
      return false;
 }
-    return false;
+
+if(memberPassword !== confirmPassword){
+  alert("Password differs, please check!")
+  return false;
+}
+
 }
