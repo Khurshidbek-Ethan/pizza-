@@ -26,6 +26,7 @@ routerAdmin.get('/logout',restaurantController.logout);
 routerAdmin.get("/check-me",restaurantController.checkAuthSession);
 
 /** Product  */
+
 routerAdmin.get('/product/all',
 restaurantController.verifyRestaurant,
 productController.getAllProducts
@@ -37,14 +38,8 @@ makeUploader("products").array("productImages",5),
 productController.createNewProduct
 );
 
-///product/:id', qaysi maxsulatni ozgartirmoqchimiz oshani shu yerga kirgizamiz uning un yangi api xosil qilamiz BSSRdan nomi methodimiz nomi bn birhil bolish kerak updateChosenProduct
-//product:updateChosenProduct deb urlga localhost:3003/admin/product/"ObjectId"qaysi productni update qilmoqchimiz databasedan Steakni ObjectId sini olamiz localhost:3003/admin/product/65f5a13fdb743a32622831ef idsini param sifatida  kochiramiz 
-// routerimizdagu ('/product/:id', :id mantigi paramisni qabul qilishinni reqni ichidan paramsni qabulishini maqsad qildik va buyruq beryapmiz product dan keyingi kelgan 
-// //  string bu bizning product idimiz  product.controllerda qabul qilamiz 
-// ""postmandan test product/:id'ni express topib berdi u restaurant.controllerdan restaurantligini tekshirdik restaurant bolaganligi un 
-// keyingi prosessga otishga ruxsat berdi faqatgina resraurantlar foydalanishi mumkin bolgan premishingga ega bolgan APIni ishlatyapmiz "
-// va undan keyin updateChosenProductga boradi "" 
-routerAdmin.post('/product/:id',// paramda istalgancha qiymatlarni qilishimiz mumkin :id2 ......
+
+routerAdmin.post('/product/:id',
 restaurantController.verifyRestaurant,
 productController.updateChosenProduct
 );
