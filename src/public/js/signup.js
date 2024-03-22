@@ -6,10 +6,10 @@ console.log("Signup frontend javascript file");
 
     fileTarget.on("change",function(){
      if(window.FileReader){
-      const uploadFile = $(this)[0].files[0];
-      console.log("uploadFile:",uploadFile);
-      const fileType = uploadFile["type"];
-      const validImageType = ["image/jpg","image/jpeg","image/png"];
+      const uploadFile = $(this)[0].files[0],
+      // console.log("uploadFile:",uploadFile);
+       fileType = uploadFile["type"],
+       validImageType = ["image/jpg","image/jpeg","image/png"];
       if(!validImageType.includes(fileType)){
        alert("Please insert only jpeg,jpg and png!")
       }else{
@@ -28,10 +28,10 @@ console.log("Signup frontend javascript file");
 
 function validateSignupForm() {
  //  console.log("EXCUTED validateSignupForm");
- const memberNick = $(".member-nick").val();
- const memberPhone = $(".member-phone").val();
- const memberPassword = $(".member-password").val();
- const confirmPassword = $(".confirm-password").val();
+ const memberNick = $(".member-nick").val(),
+  memberPhone = $(".member-phone").val(),
+  memberPassword = $(".member-password").val(),
+  confirmPassword = $(".confirm-password").val();
  //  console.log("memberNick:",memberNick);
  if(
   memberNick === "" ||
