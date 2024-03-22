@@ -1,3 +1,39 @@
+/*
+P - TASK:
+
+Shunday function yozing, u object qabul
+ qilsin va arrayni object arrayga otkazib arrayni qaytarsin qaytarsin.
+MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
+
+@MITASK
+*/
+
+// Solution 1
+function objectToArray(val: any) {
+  const result = [];
+  for (let key in val) {
+    if (val.hasOwnProperty(key)) {
+      result.push([key, val[key]]);
+    }
+  }
+  return result;
+}
+// solution 2 shortest
+/*function objectToArray(obj: {}) {
+  return Object.entries(obj);
+}
+*/
+
+const obj = { a: 10, b: 20 };
+const result = objectToArray(obj);
+console.log("result:", result);
+
+
+
+
+
+
+
 // *** O - TASK ***
 // Shunday function yozing, u har xil valuelardan iborat array qabul qilsin
 // va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
