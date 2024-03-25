@@ -1,3 +1,15 @@
+function hasProperty(object: any, key: any) {
+  if (object.hasOwnProperty(key)) {
+    return true
+  } else {
+    return false
+  }
+}
+
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model"))
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year"))
+
+
 /*
 P - TASK:
 
