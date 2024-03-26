@@ -1,13 +1,35 @@
-function hasProperty(object: any, key: any) {
-  if (object.hasOwnProperty(key)) {
-    return true
-  } else {
-    return false
-  }
+// *** R - TASK ***
+// Shunday function yozing, u string parametrga ega bolsin.
+// String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
+// MASALAN: calculate("1+3") return 4;
+
+function calculate(str: string) {
+  // '+' belgisi orqali stringni bo'lib alohida qilamiz
+  const parts = str.split('+');
+
+  // Har bir qiymatni raqamga keltirib, ularni yig'indisini hisoblaymiz
+  const sum = parts.reduce((acc, val) => acc + parseInt(val), 0);
+
+  // return parts;
+  return sum; 
+
 }
 
-console.log(hasProperty({ name: "BMW", model: "M3" }, "model"))
-console.log(hasProperty({ name: "BMW", model: "M3" }, "year"))
+console.log(calculate("1+3"));
+
+
+
+
+// function hasProperty(object: any, key: any) {
+//   if (object.hasOwnProperty(key)) {
+//     return true
+//   } else {
+//     return false
+//   }
+// }
+
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "model"))
+// console.log(hasProperty({ name: "BMW", model: "M3" }, "year"))
 
 
 /*
