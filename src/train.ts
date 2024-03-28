@@ -1,21 +1,43 @@
-// *** R - TASK ***
-// Shunday function yozing, u string parametrga ega bolsin.
-// String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
-// MASALAN: calculate("1+3") return 4;
 
-function calculate(str: string) {
-  // '+' belgisi orqali stringni bo'lib alohida qilamiz
-  const parts = str.split('+');
+function missingNumber(arr: number[]) {
+  const newArray = arr.sort();
 
-  // Har bir qiymatni raqamga keltirib, ularni yig'indisini hisoblaymiz
-  const sum = parts.reduce((acc, val) => acc + parseInt(val), 0);
-
-  // return parts;
-  return sum; 
-
+  for (let i = 0; i < newArray.length; i++) {
+    if (newArray[i] + 1 !== newArray[i + 1]) {
+      if (newArray.some((ele) => { return ele === 0 })) {
+        return (console.log(i + 1))
+      } else {
+        return (console.log(i + 2))
+      }
+    }
+  }
 }
 
-console.log(calculate("1+3"));
+
+missingNumber([3, 2, 1, 0, 5, 6])
+
+
+
+
+
+// // *** R - TASK ***
+// // Shunday function yozing, u string parametrga ega bolsin.
+// // String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
+// // MASALAN: calculate("1+3") return 4;
+
+// function calculate(str: string) {
+//   // '+' belgisi orqali stringni bo'lib alohida qilamiz
+//   const parts = str.split('+');
+
+//   // Har bir qiymatni raqamga keltirib, ularni yig'indisini hisoblaymiz
+//   const sum = parts.reduce((acc, val) => acc + parseInt(val), 0);
+
+//   // return parts;
+//   return sum; 
+
+// }
+
+// console.log(calculate("1+3"));
 
 
 
