@@ -1,20 +1,43 @@
+// // *** T - TASK ***
+// Shunday function yozing, u sonlardan tashkil topgan 2 ta array qabul qilsin
+// va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin
+// MASALAN: mergeSortedArrays([0,3,4,31], [4,6,30]); return [0,3,4,4,6,30,31]
+function mergeSortedArrays(arr_list1: number[], arr_list2: number[]) {
+  let newArray: number[] = [];
+  let i: number = 0;
+  let j: number = 0;
 
-function missingNumber(arr: number[]) {
-  const newArray = arr.sort();
-
-  for (let i = 0; i < newArray.length; i++) {
-    if (newArray[i] + 1 !== newArray[i + 1]) {
-      if (newArray.some((ele) => { return ele === 0 })) {
-        return (console.log(i + 1))
-      } else {
-        return (console.log(i + 2))
-      }
+  while (i < arr_list1.length && j < arr_list2.length) {
+    if (arr_list1[i] < arr_list2[j]) {
+      newArray.push(arr_list1[i]);
+      i++;
+    } else {
+      newArray.push(arr_list2[j]);
+      j++;
     }
   }
+
+  // mobodo array ichida owiqcha qopketgan number bo`lsa
+  while (i < arr_list1.length) {
+    newArray.push(arr_list1[i]);
+    i++;
+  }
+
+  while (j < arr_list2.length) {
+    newArray.push(arr_list2[j]);
+    j++;
+  }
+
+  return newArray;
 }
 
+const arr_list1: number[] = [0,3,4,31]; 
+const arr_list2: number[] = [4,6,30]; 
 
-missingNumber([3, 2, 1, 0, 5, 6])
+console.log(mergeSortedArrays(arr_list1, arr_list2));
+
+
+
 
 
 
