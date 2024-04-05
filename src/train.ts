@@ -1,25 +1,52 @@
-/********************** U - TASK *************************************/
+/********************** V - TASK *************************************/
 
-// Shunday function yozing, uni number parametri bolsin va
-// 0 dan berilgan parametrgacha bolgan oraliqdagi faqat toq sonlar nechtaligini return qilsin
-// MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
+// Shunday function yozing, uni string parametri bolsin va stringdagi harf va
+// u harf necha marta takrorlangani sonidan tashkil topgan object qaytarsin.
+// MASALAN: countChars("hello") return {h: 1, e: 1, l: 2, o: 1}
 
-function sumOdds(n: number) {
-  let sum = 0;
+function countChars(str: string) {
 
-  for (let i = 1; i < n; i+=2){
-    sum += 1
+  // bu yerda bo`sh object yaratib olyapmiz
+  const obj: {[key: string]: number} = {};
+
+  for (let i = 0; i < str.length; i++) {
+      // current char "str[i]".ni "ele" variable ga tenglayapmiz
+      const ele: string = str[i];
+      // obj ichida bu "ele" bowqa yoq bo`lsa uni "1"ga tenglaydi, aks holda unga "+1" qowadi
+      obj[ele] === undefined ? obj[ele] = 1 : obj[ele]++;
   }
-  // bu yerda "9 || 11" sonini ham hisobga oladi..
-  // for (let i = 1; i <= n; i+=2){
-  //   sum += 1
-  // }
 
-  return sum;
+  return obj;
 }
 
-console.log(sumOdds(9));
-console.log(sumOdds(11));
+const result1 = countChars('hello');
+const result2 = countChars('google');
+
+console.log("result1:", result1);
+console.log("result2:", result2);
+
+// /********************** U - TASK *************************************/
+
+// // Shunday function yozing, uni number parametri bolsin va
+// // 0 dan berilgan parametrgacha bolgan oraliqdagi faqat toq sonlar nechtaligini return qilsin
+// // MASALAN: sumOdds(9) return 4; sumOdds(11) return 5;
+
+// function sumOdds(n: number) {
+//   let sum = 0;
+
+//   for (let i = 1; i < n; i+=2){
+//     sum += 1
+//   }
+//   // bu yerda "9 || 11" sonini ham hisobga oladi..
+//   // for (let i = 1; i <= n; i+=2){
+//   //   sum += 1
+//   // }
+
+//   return sum;
+// }
+
+// console.log(sumOdds(9));
+// console.log(sumOdds(11));
 
 
 
