@@ -1,3 +1,4 @@
+export const AUTH_TIMER = 24;
 export const MORGAN_FORMAT = `:method :url  :response-time  [:status]\n `;
 
 // bizning stringimizni ObjectIdga otkazish mantigini yozamaiz xar doyim shu mantiqdan foydalanamiz 
