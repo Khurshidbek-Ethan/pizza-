@@ -3,9 +3,20 @@ const router = express.Router();
 import memberController from './controllers/member.controller';
 
 
-// react
-router.post('/login',memberController.login);
-router.post("/signup",memberController.signup);
+       // react
+       /** Member **/
+router.post('/member/login',memberController.login);
+router.post("/member/signup",memberController.signup);
+router.get("/member/detail", memberController.veryfyAuth);
+
+
+
+       /** Product **/
+
+
+
+       /** Order **/
+    
 
 
     export default router;
