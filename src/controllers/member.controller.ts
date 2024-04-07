@@ -70,11 +70,10 @@ memberController.signup = async (req:Request,res:Response)=>{
     let member = null;
      const token = req.cookies["accessToken"];
      if(token) member = await authService.checkAuth(token);
-
      if(!member)
      throw new Errors(HttpCode.UNAUTHORIZED,Message.NOT_AUTHENTICATED);
 
-     console.log("member:",member);
+    //  console.log("member:",member);
       res.status(HttpCode.OK).json({ member:member });
 
      
