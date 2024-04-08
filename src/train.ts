@@ -1,29 +1,50 @@
-/********************** V - TASK *************************************/
 
-// Shunday function yozing, uni string parametri bolsin va stringdagi harf va
-// u harf necha marta takrorlangani sonidan tashkil topgan object qaytarsin.
-// MASALAN: countChars("hello") return {h: 1, e: 1, l: 2, o: 1}
+// W-TASK:
 
-function countChars(str: string) {
+// Shunday function yozing, uni array va number parametrlari bolsin. Function arrayni numberda berilgan uzunlikda kesib bolaklarga ajratilgan array holatida qaytarsin
+// MASALAN: chunkArray([1,2,3,4,5,6,7,8,9,10], 3) return [[1,2,3], [4,5,6], [7,8,9], [10]]
 
-  // bu yerda bo`sh object yaratib olyapmiz
-  const obj: {[key: string]: number} = {};
-
-  for (let i = 0; i < str.length; i++) {
-      // current char "str[i]".ni "ele" variable ga tenglayapmiz
-      const ele: string = str[i];
-      // obj ichida bu "ele" bowqa yoq bo`lsa uni "1"ga tenglaydi, aks holda unga "+1" qowadi
-      obj[ele] === undefined ? obj[ele] = 1 : obj[ele]++;
-  }
-
-  return obj;
+function chunkArray<T>(arr: T[], num: number) {
+  return arr.reduce((resultArray, item, index) => {
+    const chunkIndex = Math.floor(index / num);
+    if (!resultArray[chunkIndex]) {
+      resultArray[chunkIndex] = [];
+    }
+    resultArray[chunkIndex].push(item);
+    return resultArray;
+  }, [] as T[][]);
 }
 
-const result1 = countChars('hello');
-const result2 = countChars('google');
+const result = chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
+console.log(result);
 
-console.log("result1:", result1);
-console.log("result2:", result2);
+
+// /********************** V - TASK *************************************/
+
+// // Shunday function yozing, uni string parametri bolsin va stringdagi harf va
+// // u harf necha marta takrorlangani sonidan tashkil topgan object qaytarsin.
+// // MASALAN: countChars("hello") return {h: 1, e: 1, l: 2, o: 1}
+
+// function countChars(str: string) {
+
+//   // bu yerda bo`sh object yaratib olyapmiz
+//   const obj: {[key: string]: number} = {};
+
+//   for (let i = 0; i < str.length; i++) {
+//       // current char "str[i]".ni "ele" variable ga tenglayapmiz
+//       const ele: string = str[i];
+//       // obj ichida bu "ele" bowqa yoq bo`lsa uni "1"ga tenglaydi, aks holda unga "+1" qowadi
+//       obj[ele] === undefined ? obj[ele] = 1 : obj[ele]++;
+//   }
+
+//   return obj;
+// }
+
+// const result1 = countChars('hello');
+// const result2 = countChars('google');
+
+// console.log("result1:", result1);
+// console.log("result2:", result2);
 
 // /********************** U - TASK *************************************/
 
