@@ -5,7 +5,7 @@ import { MemberStatus, MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs";
 import { shapeIntoMongooseObjectId } from "../libs/config";
 
-class MemberService {
+ class MemberService {
   private readonly memberModel;
   constructor(){
     this.memberModel = MemberModel;
@@ -21,13 +21,13 @@ class MemberService {
      result.memberPassword = "";
      return result.toJSON();
      // databasedan kelgan malumotdni jsonga ozgartiryapmiz
-  }catch(err){
+   }catch(err){
    console.error("Error,model:signup",err);
       throw new Errors(HttpCode.BAD_REQUEST,Message.USED_NICK_PHONE);
   }
               
                  
- }
+  }
           
  public async login(input:LoginInput):Promise<Member>{ 
    const member = await this.memberModel
@@ -42,7 +42,7 @@ class MemberService {
     if(!member) throw new Errors (HttpCode.NOT_FOUND,Message.NO_MEMBER_NICK);
     else if(member.memberStatus === MemberStatus.BLOCK){
       throw new Errors(HttpCode.FORBIDDEN, Message. BLOCKED_USER);
-    }
+  }
 
     console.log("member:",member);
     
@@ -57,8 +57,18 @@ class MemberService {
   return await this.memberModel.findById(member._id).lean().exec();
  // leandatabasedan olgan malumotimizni ozgartirish imkoniyati boladi 
 
- }
-          
+  }
+    
+  public async getMemberDetail(member:Member): Promise<Member> {
+    const memberId = shapeIntoMongooseObjectId (member._id);
+    const result = await this.memberModel
+    .findOne({_id:memberId, memberStatus: MemberStatus.ACTIVE})
+    .exec();
+    if(!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    return result;
+  }
+  
           
    /** SSR  */
 
@@ -111,6 +121,7 @@ class MemberService {
     .find({memberType: MemberType.USER})
     .exec();
     if(!result) throw new Errors(HttpCode.NOT_FOUND,Message.NO_DATA_FOUND);
+
     
     return result;
    }
