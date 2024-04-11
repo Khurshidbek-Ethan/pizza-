@@ -23,6 +23,8 @@ const store = new MongoDBStore({
 const app = express();
 console.log("__dirname:",__dirname);
 app.use(express.static(path.join(__dirname,"public")));
+//uplouds folderini userlarga ochib berish manqigi 
+// uploads url bn kirib kelsa express.static folderiga yuborsin nomini uploads deb kiritdik
 app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());

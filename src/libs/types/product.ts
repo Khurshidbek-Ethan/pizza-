@@ -28,6 +28,18 @@ export interface ProductInput { // ProductInputni xosil qildik
     productViews?: number;// bolishi mumkin bolmasligiham mumkin
 }
 
+
+
+export interface ProductInquiry {
+    order: string;
+    page:number;
+    limit:number;
+    productCollection?: ProductCollection;
+    search?: string;
+}
+
+
+
 export interface ProductUpdateInput { // 
     _id: ObjectId; // qaysi productni update qilmoqchimiz 
     productStatus?: ProductStatus; // va barchasi optional boladi
