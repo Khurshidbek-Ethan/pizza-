@@ -59,7 +59,7 @@ const  productController:T = {};
       console.log('getProduct');
       // const id: string = req.params.id;
       const {id} = req.params;
-      console.log("req.member:",req.member);
+      // console.log("req.member:",req.member);
       
       const memberId = req.member?._id ?? null,
          result = await productService.getProduct(memberId, id);

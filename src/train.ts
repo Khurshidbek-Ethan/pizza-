@@ -1,35 +1,57 @@
-// X-TASK:
+// Y-TASK:
 
-// Shunday function yozing, uni object va string parapetrlari bolsin. Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
-//  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+//  Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
+//  MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
 
+function findIntersection(arr1: number[], arr2: number[]) {
+  const intersection: number[] = [];
 
-function countOccurences(obj: any, key: any) {
-  let count = 0;
-
-  function countKeys(val: any) {
-    for (let prop in val) {
-      if (obj.hasOwnProperty(prop)) {
-        if (typeof val[prop] === "object") {
-          countKeys(val[prop]);
-        } else if (prop === key) {
-          count++;
-        }
-      }
+  // iteration of arrays
+  arr1.forEach((value) => {
+    if (arr2.includes(value) && !intersection.includes(value)) {
+      intersection.push(value);
     }
-  }
-  countKeys(obj);
-  return count;
+  });
+  return intersection;
 }
-
-let data = {
-  model: "Bugatti",
-  steer: { model: "HANKOOK", size: "Bugatti" },
-  bmw: { model: "M5 xiDrive", speed: "320kmh" },
-};
-
-const result = countOccurences(data, "model");
+const result = findIntersection([1, 2, 3], [3, 2, 0]);
 console.log("result:", result);
+
+
+
+
+// // X-TASK:
+
+// // Shunday function yozing, uni object va string parapetrlari bolsin. Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
+// //  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+
+
+// function countOccurences(obj: any, key: any) {
+//   let count = 0;
+
+//   function countKeys(val: any) {
+//     for (let prop in val) {
+//       if (obj.hasOwnProperty(prop)) {
+//         if (typeof val[prop] === "object") {
+//           countKeys(val[prop]);
+//         } else if (prop === key) {
+//           count++;
+//         }
+//       }
+//     }
+//   }
+//   countKeys(obj);
+//   return count;
+// }
+
+// let data = {
+//   model: "Bugatti",
+//   steer: { model: "HANKOOK", size: "Bugatti" },
+//   bmw: { model: "M5 xiDrive", speed: "320kmh" },
+// };
+
+// const result = countOccurences(data, "model");
+// console.log("result:", result);
 
 
 
