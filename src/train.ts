@@ -169,12 +169,6 @@ console.log("result:", result);
 // console.log(mergeSortedArrays(arr_list1, arr_list2));
 
 
-
-
-
-
-
-
 // // *** R - TASK ***
 // // Shunday function yozing, u string parametrga ega bolsin.
 // // String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
