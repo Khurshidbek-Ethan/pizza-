@@ -3,10 +3,11 @@ import { OrderStatus } from '../libs/enums/order.enum';
 
 
 
-const orderSchema = new Schema({
-    orderTotal:{
-        type:Number,
-        required:true,
+const orderSchema = new Schema(
+ {
+    orderTotal: {
+        type: Number,
+        required: true,
     },
 
     orderDelivery: {
@@ -16,8 +17,8 @@ const orderSchema = new Schema({
 
     orderStatus: {
         type: String,
-        enum:OrderStatus,
-        default:OrderStatus.POUSE
+        enum: OrderStatus,
+        default:OrderStatus.PAUSE,
     },
 
     memberId: {
@@ -26,7 +27,8 @@ const orderSchema = new Schema({
      ref: "Member", 
     },
 
- },{ timestamps:true }
+ },
+ { timestamps:true}
 );
 
 
