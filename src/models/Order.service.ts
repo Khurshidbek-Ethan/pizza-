@@ -126,6 +126,7 @@ class OrderService {
     //orderStatus PAUSE => PROCESS + 1 
 
     if(orderStatus === OrderStatus.PROCESS) {
+        //qaysi member ekanligini kiritdik va pointini 1ga oshir dedik +1 or 1 deymiz 
         await this.memberService.addUserPoint(member, 1);
     }
      

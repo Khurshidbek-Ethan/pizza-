@@ -1,14 +1,21 @@
+function sortByAge(array:any) {
+    return array.sort((a:any, b:any) => a.age - b.age);
+}
+
+// Test
+console.log(sortByAge([{age: 23}, {age: 21}, {age: 13}]));
+
 
 // Z-TASK:
 
 // Shunday function yozing, uni sonlardan tashkil topgan array qabul qilsin. Function arraydagi juft sonlarni yigindisini qaytarsin
 // MASALAN: sumEvens([1,2,3]) return 2
 
-function sumEvens(arr: number[]) {
-  return arr.reduce((i, ele) => ele % 2 === 0 ? i + ele : i, 0);
-}
-const result = sumEvens([1, 2, 3, 4, 5])
-console.log(result)
+// function sumEvens(arr: number[]) {
+//   return arr.reduce((i, ele) => ele % 2 === 0 ? i + ele : i, 0);
+// }
+// const result = sumEvens([1, 2, 3, 4, 5])
+// console.log(result)
 
 // Y-TASK:
 

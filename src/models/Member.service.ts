@@ -121,6 +121,8 @@ import { shapeIntoMongooseObjectId } from "../libs/config";
         memberType: MemberType.USER,
         memberStatus: MemberStatus.ACTIVE,
       },
+      //nima ozgartirishini icreamantni 
+      //memberPoints datasetni increment qildedik  va countini requestdan qabul qilamiz 
       {$inc: { memberPoints: point}},
       { new:true}).exec();
    }
