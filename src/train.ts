@@ -1,9 +1,16 @@
-function sortByAge(array:any) {
-    return array.sort((a:any, b:any) => a.age - b.age);
+function randomNumber(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min) + min);
 }
+const result = randomNumber(30, 50);
+console.log("result:", result);
 
-// Test
-console.log(sortByAge([{age: 23}, {age: 21}, {age: 13}]));
+
+// function sortByAge(array:any) {
+//     return array.sort((a:any, b:any) => a.age - b.age);
+// }
+
+// // Test
+// console.log(sortByAge([{age: 23}, {age: 21}, {age: 13}]));
 
 
 // Z-TASK:
