@@ -1,8 +1,22 @@
-function randomNumber(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min) + min);
+// ZC-TASK:
+
+// Shunday function yozing, uni number parametri bolsin va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
+// MASALAN: celsiusToFahrenheit(0) return 32
+
+
+function celsiusToFahrenheit(celsius: number) {
+  const fahrenheit = celsius * 9 / 5 + 32;
+  return fahrenheit;
 }
-const result = randomNumber(30, 50);
-console.log("result:", result);
+
+console.log(celsiusToFahrenheit(200))
+
+
+// function randomNumber(min: number, max: number) {
+//   return Math.floor(Math.random() * (max - min) + min);
+// }
+// const result = randomNumber(30, 50);
+// console.log("result:", result);
 
 
 // function sortByAge(array:any) {

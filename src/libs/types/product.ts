@@ -15,6 +15,7 @@ export interface Product { // databasimiz xosil qilib bergan
     productViews: number;
 }
 
+
 export interface ProductInput { // ProductInputni xosil qildik 
     productStatus?: ProductStatus;//  bolishi mumkin bolmasligiham mumkin
     productCollection: ProductCollection;//
