@@ -1,15 +1,29 @@
-// ZC-TASK:
-
-// Shunday function yozing, uni number parametri bolsin va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
-// MASALAN: celsiusToFahrenheit(0) return 32
-
-
-function celsiusToFahrenheit(celsius: number) {
-  const fahrenheit = celsius * 9 / 5 + 32;
-  return fahrenheit;
+function changeNumberInArray(index: number, value: number[], new_value: number): number[] {
+    // Array ning uzunligi va indeksni tekshirish
+    if (index >= 0 && index < value.length) {
+        value[index] = new_value;
+    }
+    return value;
 }
 
-console.log(celsiusToFahrenheit(200))
+// Test qilish
+const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
+console.log(result);  // Kutilgan natija: [1, 2, 7, 2]
+
+
+
+// // ZC-TASK:
+
+// // Shunday function yozing, uni number parametri bolsin va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
+// // MASALAN: celsiusToFahrenheit(0) return 32
+
+
+// function celsiusToFahrenheit(celsius: number) {
+//   const fahrenheit = celsius * 9 / 5 + 32;
+//   return fahrenheit;
+// }
+
+// console.log(celsiusToFahrenheit(200))
 
 
 // function randomNumber(min: number, max: number) {
