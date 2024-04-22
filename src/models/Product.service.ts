@@ -51,7 +51,7 @@ class ProductService {
    }
      
 
-   public async getProduct(memberId:ObjectId | null,id:string): Promise<Product> {
+   public async getProduct ( memberId:ObjectId | null, id:string): Promise<Product> {
      const productId =  shapeIntoMongooseObjectId(id);
 
      let result = await this.productModel.findOne({
@@ -84,8 +84,8 @@ class ProductService {
       result = await this.productModel
      .findByIdAndUpdate(
         productId,
-        {$inc: {productViews: +1 } },
-        {new: true}
+        {$inc: { productViews: -1} },
+        {new: true},
      )
      .exec();
 

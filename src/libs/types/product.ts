@@ -13,6 +13,8 @@ export interface Product { // databasimiz xosil qilib bergan
     productDesc?: string;   //
     productImages: string[];
     productViews: number;
+    createdAt:Date;
+    updatedAt:Date;
 }
 
 
