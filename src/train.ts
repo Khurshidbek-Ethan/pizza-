@@ -1,3 +1,8 @@
+// Shunday function yozing, uni number, array va number parametrlari bolsin va berilgan 1-parametr numberga teng indexni array ichidan topib 3-parametrdagi raqam bilan almashtirib yangilangan arrayni qaytarsin
+// MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
+
+
+
 function changeNumberInArray(index: number, value: number[], new_value: number): number[] {
     // Array ning uzunligi va indeksni tekshirish
     if (index >= 0 && index < value.length) {

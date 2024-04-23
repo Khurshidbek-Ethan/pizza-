@@ -7,7 +7,7 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import {MORGAN_FORMAT} from "./libs/config";
 
-
+// Cors ustanovka / npm i cors@^2.8.5 /npm i @types/cors -D
 
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
@@ -18,7 +18,14 @@ const store = new MongoDBStore({
     uri:String(process.env.MONGO_URL) ,
     collection: "sessions",
   });
-
+// burak-reactdan req amalga oshirilganda Cors xatolik bolyapdi 
+//burakimizni ximoyasi ishga tushyapdi lekin postman orqali req qilsak xech qandey Cors ga bogliq bolgan xatolik bomayapdi nega?
+//chunki bizi Postmanemiz test qilish maqsadida bizning serverimiz Postmandan qilinayotgan req ximoyalangan req deb qabul qiladi
+//browserlardan kelayotgan reqni ximoyalanmagan deb qareydi 
+// Cors -> bizning backend serverni aynan qaysi clientlarga ochib berishimizni aytadi boshqa browserlardan kelayotgan reqga ruxsat berish 
+// backendimizni ximoyaleymiz tashqi olamdan 
+//backendimizga bita domeyingdan req bolmasa aytalik bir nechta domeying orqali bizning backentga req amalga oshirilsa
+//biz whitelist xosil qilib arrayga olib qaysi urldan kelishligiga ruxsat beramiz 
 
 /**  1-ENTRANCE  **/
 const app = express();
@@ -29,8 +36,11 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+//ihtiyori domeyinglardan kelayotgan req larga serverimizni ochishni maqsad qildik va kirishiga ruxsat beradi 
 app.use(cors(
+  //
  {credentials:true,
+  //ihtiyoriy origindan 
      origin:true
  })
 );
