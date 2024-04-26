@@ -1,63 +1,121 @@
 import express from "express";
 const routerAdmin = express.Router();
-import restaurantController from './controllers/restaurant.controller';
+import restaurantController from "./controllers/restaurant.controller";
 import productController from "./controllers/product.controller";
 import makeUploader from "./libs/utils/uploader";
 
-/*  Restaurant */
-routerAdmin.get('/',restaurantController.goHome);
+// gets two argument =>
+// 1: endpoint (url)
+// 2: restaurantController ga bogliq methodlar
 
+/**Restauran */
+routerAdmin.get("/", restaurantController.goHome);
 routerAdmin
-    .get('/login',restaurantController.getLogin)
-    .post('/login',restaurantController.processLogin);
-
-
+  .get("/login", restaurantController.getLogin)
+  .post("/login", restaurantController.processLogin);
 routerAdmin
-   .get('/signup',restaurantController.getSignup)
-   .post("/signup",
-   makeUploader("members").single("memberImage"),//
-   restaurantController.processSignup);
+  .get("/signup", restaurantController.getSignup)
+  .post(
+    "/signup",
+    makeUploader("members").single("memberImage"),
+    restaurantController.processSignup
+  );
+routerAdmin.get("/logout", restaurantController.logout);
+routerAdmin.get("/check-me", restaurantController.checkAuthSession);
 
-
-routerAdmin.get('/logout',restaurantController.logout);
-// sessionni tozalab berish kerak boladi
-
-
-routerAdmin.get("/check-me",restaurantController.checkAuthSession);
-
-/** Product  */
-
-routerAdmin.get('/product/all',
-restaurantController.verifyRestaurant,
-productController.getAllProducts
+/** Product **/
+routerAdmin.get(
+  "/product/all",
+  restaurantController.verifyRestaurant,
+  productController.getAllProducts
+);
+routerAdmin.post(
+  "/product/create",
+  restaurantController.verifyRestaurant,
+  // makeUploader.single("productImage"), makeUploader function uchun beriladigon manzil
+  // folder name buyerda products va request qilayotkanda productImage db beriladi
+  makeUploader("products").array("productImages", 5),
+  productController.createNewProduct
+);
+routerAdmin.post(
+  // epxpress topib bergan router
+  "/product/:id",
+  // restarant controllerdan restaran ekanligimiz tekshiradi va keyingi bosqichga olib otadi
+  restaurantController.verifyRestaurant,
+  productController.updateChosenProduct
 );
 
-routerAdmin.post("/product/create",
-restaurantController.verifyRestaurant,
-makeUploader("products").array("productImages",5),
-productController.createNewProduct
+/** User **/
+routerAdmin.get(
+  "/user/all",
+  restaurantController.verifyRestaurant,
+  restaurantController.getUsers
+);
+routerAdmin.post(
+  "/user/edit",
+  restaurantController.verifyRestaurant,
+  restaurantController.updateChosenUser
 );
 
+export default routerAdmin;
 
-routerAdmin.post('/product/:id',
-restaurantController.verifyRestaurant,
-productController.updateChosenProduct
-);
-// :id=>parram deyiladi
+// import express from "express";
+// const routerAdmin = express.Router();
+// import restaurantController from "./controllers/restaurant.controller";
+// import productController from "./controllers/product.controller";
+// import makeUploader from "./libs/utils/uploader";
 
+// /*  Restaurant */
+// routerAdmin.get("/", restaurantController.goHome);
 
-/** User  Member*/
+// routerAdmin
+//   .get("/login", restaurantController.getLogin)
+//   .post("/login", restaurantController.processLogin);
 
-routerAdmin.get("/user/all",
-restaurantController.verifyRestaurant,
-restaurantController.getUsers
-);
-routerAdmin.post("/user/edit",
-restaurantController.verifyRestaurant,
-restaurantController.updateChosenUser
-);
+// routerAdmin.get("/signup", restaurantController.getSignup).post(
+//   "/signup",
+//   makeUploader("members").single("memberImage"), //
+//   restaurantController.processSignup
+// );
 
+// routerAdmin.get("/logout", restaurantController.logout);
+// // sessionni tozalab berish kerak boladi
 
+// routerAdmin.get("/check-me", restaurantController.checkAuthSession);
 
+// /** Product  */
 
-    export default routerAdmin;
+// routerAdmin.get(
+//   "/product/all",
+//   restaurantController.verifyRestaurant,
+//   productController.getAllProducts
+// );
+
+// routerAdmin.post(
+//   "/product/create",
+//   restaurantController.verifyRestaurant,
+//   makeUploader("products").array("productImages", 5),
+//   productController.createNewProduct
+// );
+
+// routerAdmin.post(
+//   "/product/:id",
+//   restaurantController.verifyRestaurant,
+//   productController.updateChosenProduct
+// );
+// // :id=>parram deyiladi
+
+// /** User  Member*/
+
+// routerAdmin.get(
+//   "/user/all",
+//   restaurantController.verifyRestaurant,
+//   restaurantController.getUsers
+// );
+// routerAdmin.post(
+//   "/user/edit",
+//   restaurantController.verifyRestaurant,
+//   restaurantController.updateChosenUser
+// );
+
+// export default routerAdmin;

@@ -1,27 +1,49 @@
+/*
+ZD-TASK:
+
+Shunday function yozing, uni number, 
+array va number parametrlari bolsin 
+va berilgan 1-parametr numberga teng 
+indexni array ichidan topib 3-parametrdagi 
+raqam bilan almashtirib yangilangan arrayni qaytarsin
+MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
+
+@MITASK
+
+*/
+function changeNumberInArray(index: any, value: any, newVal: any) {
+  if (index >= 0 && index < value.length) {
+    value[index] = newVal;
+  }
+  return value;
+}
+
+const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
+console.log(result);
+
 // Shunday function yozing, uni number, array va number parametrlari bolsin va berilgan 1-parametr numberga teng indexni array ichidan topib 3-parametrdagi raqam bilan almashtirib yangilangan arrayni qaytarsin
 // MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
 
+// function changeNumberInArray(
+//   index: number,
+//   value: number[],
+//   new_value: number
+// ): number[] {
+//   // Array ning uzunligi va indeksni tekshirish
+//   if (index >= 0 && index < value.length) {
+//     value[index] = new_value;
+//   }
+//   return value;
+// }
 
-
-function changeNumberInArray(index: number, value: number[], new_value: number): number[] {
-    // Array ning uzunligi va indeksni tekshirish
-    if (index >= 0 && index < value.length) {
-        value[index] = new_value;
-    }
-    return value;
-}
-
-// Test qilish
-const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
-console.log(result);  // Kutilgan natija: [1, 2, 7, 2]
-
-
+// // Test qilish
+// const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
+// console.log(result); // Kutilgan natija: [1, 2, 7, 2]
 
 // // ZC-TASK:
 
 // // Shunday function yozing, uni number parametri bolsin va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
 // // MASALAN: celsiusToFahrenheit(0) return 32
-
 
 // function celsiusToFahrenheit(celsius: number) {
 //   const fahrenheit = celsius * 9 / 5 + 32;
@@ -30,13 +52,11 @@ console.log(result);  // Kutilgan natija: [1, 2, 7, 2]
 
 // console.log(celsiusToFahrenheit(200))
 
-
 // function randomNumber(min: number, max: number) {
 //   return Math.floor(Math.random() * (max - min) + min);
 // }
 // const result = randomNumber(30, 50);
 // console.log("result:", result);
-
 
 // function sortByAge(array:any) {
 //     return array.sort((a:any, b:any) => a.age - b.age);
@@ -44,7 +64,6 @@ console.log(result);  // Kutilgan natija: [1, 2, 7, 2]
 
 // // Test
 // console.log(sortByAge([{age: 23}, {age: 21}, {age: 13}]));
-
 
 // Z-TASK:
 
@@ -76,14 +95,10 @@ console.log(result);  // Kutilgan natija: [1, 2, 7, 2]
 // const result = findIntersection([1, 2, 3], [3, 2, 0]);
 // console.log("result:", result);
 
-
-
-
 // // X-TASK:
 
 // // Shunday function yozing, uni object va string parapetrlari bolsin. Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
 // //  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
-
 
 // function countOccurences(obj: any, key: any) {
 //   let count = 0;
@@ -112,10 +127,6 @@ console.log(result);  // Kutilgan natija: [1, 2, 7, 2]
 // const result = countOccurences(data, "model");
 // console.log("result:", result);
 
-
-
-
-
 // W-TASK:
 
 // Shunday function yozing, uni array va number parametrlari bolsin. Function arrayni numberda berilgan uzunlikda kesib bolaklarga ajratilgan array holatida qaytarsin
@@ -134,7 +145,6 @@ console.log(result);  // Kutilgan natija: [1, 2, 7, 2]
 
 // const result = chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3);
 // console.log(result);
-
 
 // /********************** V - TASK *************************************/
 
@@ -186,9 +196,6 @@ console.log(result);  // Kutilgan natija: [1, 2, 7, 2]
 // console.log(sumOdds(9));
 // console.log(sumOdds(11));
 
-
-
-
 // // // *** T - TASK ***
 // // Shunday function yozing, u sonlardan tashkil topgan 2 ta array qabul qilsin
 // // va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin
@@ -222,11 +229,10 @@ console.log(result);  // Kutilgan natija: [1, 2, 7, 2]
 //   return newArray;
 // }
 
-// const arr_list1: number[] = [0,3,4,31]; 
-// const arr_list2: number[] = [4,6,30]; 
+// const arr_list1: number[] = [0,3,4,31];
+// const arr_list2: number[] = [4,6,30];
 
 // console.log(mergeSortedArrays(arr_list1, arr_list2));
-
 
 // // *** R - TASK ***
 // // Shunday function yozing, u string parametrga ega bolsin.
@@ -241,14 +247,11 @@ console.log(result);  // Kutilgan natija: [1, 2, 7, 2]
 //   const sum = parts.reduce((acc, val) => acc + parseInt(val), 0);
 
 //   // return parts;
-//   return sum; 
+//   return sum;
 
 // }
 
 // console.log(calculate("1+3"));
-
-
-
 
 // function hasProperty(object: any, key: any) {
 //   if (object.hasOwnProperty(key)) {
@@ -260,7 +263,6 @@ console.log(result);  // Kutilgan natija: [1, 2, 7, 2]
 
 // console.log(hasProperty({ name: "BMW", model: "M3" }, "model"))
 // console.log(hasProperty({ name: "BMW", model: "M3" }, "year"))
-
 
 /*
 P - TASK:
@@ -292,12 +294,6 @@ MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 // const result = objectToArray(obj);
 // console.log("result:", result);
 
-
-
-
-
-
-
 // *** O - TASK ***
 // Shunday function yozing, u har xil valuelardan iborat array qabul qilsin
 // va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
@@ -321,7 +317,6 @@ MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 
 // console.log(result);
 
-
 // function palindromCheck(word: string) {
 //   const word2: string = word.split('').reverse().join('').toString()
 //   return word === word2
@@ -337,7 +332,7 @@ MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 // const result = getSquareNumbers([1, 2, 3]);
 // console.log(result);
 // console.log("typeof result:", typeof result)
- 
+
 // function reverseSentence(sentence: string) {
 //   const arr = sentence.split(" ")
 //   let newSentence = ""
@@ -351,9 +346,8 @@ MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 // }
 
 // console.log(reverseSentence("we like coding!?"))
- 
- 
- /*  Project Standards
+
+/*  Project Standards
 -Loggin standards
 - Naming standards
 function , method ,variable =>CAMEL     goHome
@@ -393,9 +387,7 @@ Pipe ->serverga kirish oraligidagi buni Pipelar bn amalga oshirishimiz mumkin
 /
 */
 
-
-
-// Shunday function yozing, u string qabul qilsin 
+// Shunday function yozing, u string qabul qilsin
 // va string ichidagi unli harflar sonini qaytarsin.
 // MASALAN: countVowels("string") return 1;
 
@@ -453,9 +445,6 @@ Pipe ->serverga kirish oraligidagi buni Pipelar bn amalga oshirishimiz mumkin
 /
 */
 
-
-
-
 /* J-TASK: 
 
 Shunday function yozing, 
@@ -474,7 +463,6 @@ MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
 // const result = findLongestWord("I come from Uzbekistan");
 // console.log("result:", result);
 
-
 /* I-TASK: 
 
 Shunday function tuzing, unga string argument pass bolsin. 
@@ -487,8 +475,6 @@ MASALAN: getDigits("m14i1t") return qiladi "141"
 //     let num_str = str.replace(/[^0-9]/g, "");
 //     return parseInt(num_str);
 //   }
-  
+
 //   const result = getDigits("m14i1t");
 //   console.log(result);
-  
-
