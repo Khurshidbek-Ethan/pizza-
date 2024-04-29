@@ -1,3 +1,23 @@
+// ZF-TASK:
+
+// Shunday function yozing, uni string parametri bolsin. String ichidagi har bir sozni bosh harflarini katta harf qilib qaytarsin lekin 1 yoki 2 harfdan iborat sozlarni esa oz holicha qoldirsin.
+// MASALAN: capitalizeWords('name should be a string') return 'Name Should be a String'
+
+function capitalizeWords(sentence: string): string {
+  return sentence
+    .toLowerCase()
+    .split(" ")
+    .map((word) => {
+      if (word.length <= 2) {
+        return word;
+      }
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
+console.log("test:", capitalizeWords("NAME should be a string, MIT9"));
+
 /*
 ZD-TASK:
 
@@ -10,16 +30,16 @@ MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
 
 @MITASK
 
-*/
-function changeNumberInArray(index: any, value: any, newVal: any) {
-  if (index >= 0 && index < value.length) {
-    value[index] = newVal;
-  }
-  return value;
-}
+// */
+// function changeNumberInArray(index: any, value: any, newVal: any) {
+//   if (index >= 0 && index < value.length) {
+//     value[index] = newVal;
+//   }
+//   return value;
+// }
 
-const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
-console.log(result);
+// const result = changeNumberInArray(1, [1, 3, 7, 2], 2);
+// console.log(result);
 
 // Shunday function yozing, uni number, array va number parametrlari bolsin va berilgan 1-parametr numberga teng indexni array ichidan topib 3-parametrdagi raqam bilan almashtirib yangilangan arrayni qaytarsin
 // MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
