@@ -1,50 +1,3 @@
-import { ObjectId } from "mongoose";
-import { OrderStatus } from "../enums/order.enum";
-import { Product } from "./product";
-
-export interface OrderItem {
-  _id: ObjectId;
-  itemQuantity: number;
-  itemPrice: number;
-  orderId: ObjectId;
-  productId: ObjectId;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-export interface Order {
-  _id: ObjectId;
-  orderTotal: number;
-  orderDelivery: number;
-  orderStatus: OrderStatus;
-  memberId: ObjectId;
-  createdAt: Date;
-  updatedAt: Date;
-
-  /** from aggregations **/
-  orderItems: OrderItem[];
-  productData: Product[];
-}
-
-export interface OrderItemInput {
-  productId: ObjectId;
-  itemQuantity: number;
-  itemPrice: number;
-  orderId?: ObjectId;
-}
-
-export interface OrderInquiry {
-  page: number;
-  limit: number;
-  orderStatus: OrderStatus;
-}
-
-export interface OrderUpdateInput {
-  orderId: String;
-  orderStatus: OrderStatus;
-}
-
-//////////////////////////////
 // import { ObjectId } from "mongoose";
 // import { OrderStatus } from "../enums/order.enum";
 // import { Product } from "./product";
@@ -67,6 +20,7 @@ export interface OrderUpdateInput {
 //   memberId: ObjectId;
 //   createdAt: Date;
 //   updatedAt: Date;
+
 //   /** from aggregations **/
 //   orderItems: OrderItem[];
 //   productData: Product[];
@@ -86,6 +40,52 @@ export interface OrderUpdateInput {
 // }
 
 // export interface OrderUpdateInput {
-//   orderId: string;
+//   orderId: String;
 //   orderStatus: OrderStatus;
 // }
+
+////////////////////////////
+import { ObjectId } from "mongoose";
+import { OrderStatus } from "../enums/order.enum";
+import { Product } from "./product";
+
+export interface OrderItem {
+  _id: ObjectId;
+  itemQuantity: number;
+  itemPrice: number;
+  orderId: ObjectId;
+  productId: ObjectId;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface Order {
+  _id: ObjectId;
+  orderTotal: number;
+  orderDelivery: number;
+  orderStatus: OrderStatus;
+  memberId: ObjectId;
+  createdAt: Date;
+  updatedAt: Date;
+  /** from aggregations **/
+  orderItems: OrderItem[];
+  productData: Product[];
+}
+
+export interface OrderItemInput {
+  productId: ObjectId;
+  itemQuantity: number;
+  itemPrice: number;
+  orderId?: ObjectId;
+}
+
+export interface OrderInquiry {
+  page: number;
+  limit: number;
+  orderStatus: OrderStatus;
+}
+
+export interface OrderUpdateInput {
+  orderId: string;
+  orderStatus: OrderStatus;
+}
