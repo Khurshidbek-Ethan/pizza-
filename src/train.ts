@@ -1,3 +1,38 @@
+// Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin.
+// MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
+
+function findDisappearedNumbers(nums: number[]): number[] {
+  // Agar berilgan ro'yxat bo'sh bo'lsa, bo'sh ro'yxat qaytariladi.
+  if (nums.length === 0) {
+    return [];
+  }
+
+  // Ro'yxatdagi eng katta raqamni topamiz.
+  const maxNum = Math.max(...nums);
+
+  // To'liq raqamlar to'plamini yaratamiz.
+  const fullSet = new Set<number>();
+  for (let i = 1; i <= maxNum; i++) {
+    fullSet.add(i);
+  }
+
+  // Berilgan raqamlarni to'plamga qo'shamiz.
+  const numSet = new Set<number>(nums);
+
+  // To'plamdan berilgan raqamlarni olib tashlaymiz.
+  const result: number[] = [];
+  fullSet.forEach((num) => {
+    if (!numSet.has(num)) {
+      result.push(num);
+    }
+  });
+
+  return result;
+}
+
+// Test qilish
+console.log(findDisappearedNumbers([1, 3, 4, 7])); // [2, 5, 6]
+
 /* 
 ZG-TASK:
 
@@ -8,15 +43,15 @@ MASALAN: capitalizeWords('name should be a string') return 'name_should_be_a_str
 
 */
 
-function snakeWords(str: string) {
-  let words = str.split(" ");
-  let capitalize = words.map(function (word) {
-    return word.charAt(0).toLowerCase() + word.slice(1);
-  });
-  return capitalize.join("_");
-}
-const result = snakeWords("name should be a string");
-console.log("result:", result);
+// function snakeWords(str: string) {
+//   let words = str.split(" ");
+//   let capitalize = words.map(function (word) {
+//     return word.charAt(0).toLowerCase() + word.slice(1);
+//   });
+//   return capitalize.join("_");
+// }
+// const result = snakeWords("name should be a string");
+// console.log("result:", result);
 
 // ZF-TASK:
 
