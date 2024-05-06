@@ -1,47 +1,62 @@
-// Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin.
-// MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
+// ZI-TASK:
 
-function findDisappearedNumbers(nums: number[]): number[] {
-  // Agar berilgan ro'yxat bo'sh bo'lsa, bo'sh ro'yxat qaytariladi.
-  if (nums.length === 0) {
-    return [];
-  }
-
-  // Ro'yxatdagi eng katta raqamni topamiz.
-  const maxNum = Math.max(...nums);
-
-  // To'liq raqamlar to'plamini yaratamiz.
-  const fullSet = new Set<number>();
-  for (let i = 1; i <= maxNum; i++) {
-    fullSet.add(i);
-  }
-
-  // Berilgan raqamlarni to'plamga qo'shamiz.
-  const numSet = new Set<number>(nums);
-
-  // To'plamdan berilgan raqamlarni olib tashlaymiz.
-  const result: number[] = [];
-  fullSet.forEach((num) => {
-    if (!numSet.has(num)) {
-      result.push(num);
-    }
+// Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
+// MASALAN: delayHelloWorld("Hello World") return "Hello World"
+function delayHelloWorld(message: string): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(message);
+    }, 3000); // 3000 milliseconds = 3 seconds
   });
-
-  return result;
 }
 
-// Test qilish
-console.log(findDisappearedNumbers([1, 3, 4, 7])); // [2, 5, 6]
+// Funksiyani ishlatish misoli:
+delayHelloWorld("Hello World").then(console.log); // 3 soniyadan keyin konsolda "Hello World" chiqaradi
 
-/* 
-ZG-TASK:
+// // Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin.
+// // MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
 
-Shunday function yozing, u berilgan string parametrni snake casega otkazib qaytarsin. 
-MASALAN: capitalizeWords('name should be a string') return 'name_should_be_a_string'
+// function findDisappearedNumbers(nums: number[]): number[] {
+//   // Agar berilgan ro'yxat bo'sh bo'lsa, bo'sh ro'yxat qaytariladi.
+//   if (nums.length === 0) {
+//     return [];
+//   }
 
-@MITASK
+//   // Ro'yxatdagi eng katta raqamni topamiz.
+//   const maxNum = Math.max(...nums);
 
-*/
+//   // To'liq raqamlar to'plamini yaratamiz.
+//   const fullSet = new Set<number>();
+//   for (let i = 1; i <= maxNum; i++) {
+//     fullSet.add(i);
+//   }
+
+//   // Berilgan raqamlarni to'plamga qo'shamiz.
+//   const numSet = new Set<number>(nums);
+
+//   // To'plamdan berilgan raqamlarni olib tashlaymiz.
+//   const result: number[] = [];
+//   fullSet.forEach((num) => {
+//     if (!numSet.has(num)) {
+//       result.push(num);
+//     }
+//   });
+
+//   return result;
+// }
+
+// // Test qilish
+// console.log(findDisappearedNumbers([1, 3, 4, 7])); // [2, 5, 6]
+
+// // /*
+// ZG-TASK:
+
+// Shunday function yozing, u berilgan string parametrni snake casega otkazib qaytarsin.
+// MASALAN: capitalizeWords('name should be a string') return 'name_should_be_a_string'
+
+// @MITASK
+
+// */
 
 // function snakeWords(str: string) {
 //   let words = str.split(" ");
