@@ -1,17 +1,39 @@
-// ZI-TASK:
+// ZJ-TASK:
 
-// Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
-// MASALAN: delayHelloWorld("Hello World") return "Hello World"
-function delayHelloWorld(message: string): Promise<string> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(message);
-    }, 3000); // 3000 milliseconds = 3 seconds
-  });
+// Shunday function yozing, u berilgan arrayni ichidagi numberlarni qiymatini hisoblab qaytarsin.
+// MASALAN: reduceNestedArray([1, [1, 2, [4]]]) return 8
+
+function reduceNestedArray(arr: any[]): number {
+  return arr.reduce((sum, item) => {
+    if (Array.isArray(item)) {
+      // Agar item yana bir array bo'lsa, rekursiv tarzda funksiyani chaqir
+      return sum + reduceNestedArray(item);
+    } else {
+      // Agar item oddiy raqam bo'lsa, uni yig'indiga qo'sh
+      return sum + item;
+    }
+  }, 0);
 }
 
-// Funksiyani ishlatish misoli:
-delayHelloWorld("Hello World").then(console.log); // 3 soniyadan keyin konsolda "Hello World" chiqaradi
+// Misollar
+console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
+console.log(reduceNestedArray([1, [3, 2], 4, [5]])); // 15
+console.log(reduceNestedArray([1, [1, [1, [1, [1]]]]])); // 5
+
+// // ZI-TASK:
+
+// // Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
+// // MASALAN: delayHelloWorld("Hello World") return "Hello World"
+// function delayHelloWorld(message: string): Promise<string> {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(message);
+//     }, 3000); // 3000 milliseconds = 3 seconds
+//   });
+// }
+
+// // Funksiyani ishlatish misoli:
+// delayHelloWorld("Hello World").then(console.log); // 3 soniyadan keyin konsolda "Hello World" chiqaradi
 
 // // Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin.
 // // MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
