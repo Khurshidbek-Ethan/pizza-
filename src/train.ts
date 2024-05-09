@@ -1,24 +1,47 @@
+// ZK-TASK:
+
+// Shunday function yozing, u har soniyada bir marta consolega 1 dan 5 gacha bolgan raqamlarni chop etsin va 5 soniyadan keyin ishini toxtatsin.
+// MASALAN: printNumbers()
+
+function printNumbers() {
+  let count = 1; // Raqamlarni hisoblash uchun o'zgaruvchi
+  const interval = setInterval(() => {
+    console.log(count); // Raqamni chop etish
+    if (count === 5) {
+      count = 0; // Agar 5 ga yetib kelsa, qaytadan 1 dan boshlash
+    }
+    count++; // Keyingi raqamga o'tish
+  }, 1000); // Har 1000 millisekundda (1 soniyada) ishga tushadi
+
+  setTimeout(() => {
+    clearInterval(interval); // 5 soniyadan keyin intervalni to'xtatamiz
+    console.log("Interval to'xtatildi.");
+  }, 5000); // 5000 millisekund (5 soniya) keyin ishga tushadi
+}
+
+printNumbers();
+
 // ZJ-TASK:
 
 // Shunday function yozing, u berilgan arrayni ichidagi numberlarni qiymatini hisoblab qaytarsin.
 // MASALAN: reduceNestedArray([1, [1, 2, [4]]]) return 8
 
-function reduceNestedArray(arr: any[]): number {
-  return arr.reduce((sum, item) => {
-    if (Array.isArray(item)) {
-      // Agar item yana bir array bo'lsa, rekursiv tarzda funksiyani chaqir
-      return sum + reduceNestedArray(item);
-    } else {
-      // Agar item oddiy raqam bo'lsa, uni yig'indiga qo'sh
-      return sum + item;
-    }
-  }, 0);
-}
+// function reduceNestedArray(arr: any[]): number {
+//   return arr.reduce((sum, item) => {
+//     if (Array.isArray(item)) {
+//       // Agar item yana bir array bo'lsa, rekursiv tarzda funksiyani chaqir
+//       return sum + reduceNestedArray(item);
+//     } else {
+//       // Agar item oddiy raqam bo'lsa, uni yig'indiga qo'sh
+//       return sum + item;
+//     }
+//   }, 0);
+// }
 
-// Misollar
-console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
-console.log(reduceNestedArray([1, [3, 2], 4, [5]])); // 15
-console.log(reduceNestedArray([1, [1, [1, [1, [1]]]]])); // 5
+// // Misollar
+// console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
+// console.log(reduceNestedArray([1, [3, 2], 4, [5]])); // 15
+// console.log(reduceNestedArray([1, [1, [1, [1, [1]]]]])); // 5
 
 // // ZI-TASK:
 
