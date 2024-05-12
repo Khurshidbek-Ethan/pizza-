@@ -1,25 +1,39 @@
+// Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
+// MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
+
+function stringToKebab(s: string): string {
+  // Boshlang'ich harflarni kichik qilish
+  s = s.toLowerCase();
+  // Bo'shliq belgilarni kebab case gacha almashtirish
+  s = s.replace(/\s+/g, "-");
+  return s;
+}
+
+// Test qilish
+console.log(stringToKebab("I love Kebab"));
+
 // ZK-TASK:
 
 // Shunday function yozing, u har soniyada bir marta consolega 1 dan 5 gacha bolgan raqamlarni chop etsin va 5 soniyadan keyin ishini toxtatsin.
 // MASALAN: printNumbers()
 
-function printNumbers() {
-  let count = 1; // Raqamlarni hisoblash uchun o'zgaruvchi
-  const interval = setInterval(() => {
-    console.log(count); // Raqamni chop etish
-    if (count === 5) {
-      count = 0; // Agar 5 ga yetib kelsa, qaytadan 1 dan boshlash
-    }
-    count++; // Keyingi raqamga o'tish
-  }, 1000); // Har 1000 millisekundda (1 soniyada) ishga tushadi
+// function printNumbers() {
+//   let count = 1; // Raqamlarni hisoblash uchun o'zgaruvchi
+//   const interval = setInterval(() => {
+//     console.log(count); // Raqamni chop etish
+//     if (count === 5) {
+//       count = 0; // Agar 5 ga yetib kelsa, qaytadan 1 dan boshlash
+//     }
+//     count++; // Keyingi raqamga o'tish
+//   }, 1000); // Har 1000 millisekundda (1 soniyada) ishga tushadi
 
-  setTimeout(() => {
-    clearInterval(interval); // 5 soniyadan keyin intervalni to'xtatamiz
-    console.log("Interval to'xtatildi.");
-  }, 5000); // 5000 millisekund (5 soniya) keyin ishga tushadi
-}
+//   setTimeout(() => {
+//     clearInterval(interval); // 5 soniyadan keyin intervalni to'xtatamiz
+//     console.log("Interval to'xtatildi.");
+//   }, 5000); // 5000 millisekund (5 soniya) keyin ishga tushadi
+// }
 
-printNumbers();
+// printNumbers();
 
 // ZJ-TASK:
 

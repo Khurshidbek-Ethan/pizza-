@@ -19,22 +19,22 @@ restaurantController.goHome = (req: Request, res: Response) => {
   }
 };
 
-restaurantController.getSignup = (req: Request, res: Response) => {
-  try {
-    console.log("getSignup");
-    res.render("signup");
-  } catch (err) {
-    console.log("Error, getSignup:", err);
-    res.redirect("/admin");
-  }
-};
-
 restaurantController.getLogin = (req: Request, res: Response) => {
   try {
     console.log("getLogin");
     res.render("login");
   } catch (err) {
     console.log("Error, getLogin:", err);
+    res.redirect("/admin");
+  }
+};
+
+restaurantController.getSignup = (req: Request, res: Response) => {
+  try {
+    console.log("getSignup");
+    res.render("signup");
+  } catch (err) {
+    console.log("Error, getSignup:", err);
     res.redirect("/admin");
   }
 };
