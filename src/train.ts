@@ -1,16 +1,25 @@
+// Shunday function yozing, u function parametrga berilgan raqamlarni orqasiga ogirib qaytarsin.
+// MASALAN: reverseInteger(123456789) return 987654321
+function tarin(number: number) {
+  const result = number.toString().split("").reverse().join("");
+  return result;
+}
+
+console.log(tarin(123456789));
+
 // Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
 // MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
 
-function stringToKebab(s: string): string {
-  // Boshlang'ich harflarni kichik qilish
-  s = s.toLowerCase();
-  // Bo'shliq belgilarni kebab case gacha almashtirish
-  s = s.replace(/\s+/g, "-");
-  return s;
-}
+// function stringToKebab(s: string): string {
+//   // Boshlang'ich harflarni kichik qilish
+//   s = s.toLowerCase();
+//   // Bo'shliq belgilarni kebab case gacha almashtirish
+//   s = s.replace(/\s+/g, "-");
+//   return s;
+// }
 
-// Test qilish
-console.log(stringToKebab("I love Kebab"));
+// // Test qilish
+// console.log(stringToKebab("I love Kebab"));
 
 // ZK-TASK:
 
