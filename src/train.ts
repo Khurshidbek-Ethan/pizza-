@@ -1,11 +1,26 @@
-// Shunday function yozing, u function parametrga berilgan raqamlarni orqasiga ogirib qaytarsin.
-// MASALAN: reverseInteger(123456789) return 987654321
-function tarin(number: number) {
-  const result = number.toString().split("").reverse().join("");
-  return result;
+function rotateArray(arr: any[], index: number): any[] {
+  if (index < 0 || index >= arr.length) {
+    throw new Error("Index is out of bounds");
+  }
+
+  // Arrayning oxiridan indexgacha bo'lgan qismini olib, boshiga qo'shamiz
+  const partToMove = arr.slice(-index);
+  const remainingPart = arr.slice(0, -index);
+  return partToMove.concat(remainingPart);
 }
 
-console.log(tarin(123456789));
+// Misol:
+const result = rotateArray([1, 2, 3, 4, 5, 6], 3);
+console.log(result); // [5, 6, 1, 2, 3, 4]
+
+// Shunday function yozing, u function parametrga berilgan raqamlarni orqasiga ogirib qaytarsin.
+// MASALAN: reverseInteger(123456789) return 987654321
+// function tarin(number: number) {
+//   const result = number.toString().split("").reverse().join("");
+//   return result;
+// }
+
+// console.log(tarin(123456789));
 
 // Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
 // MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
