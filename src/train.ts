@@ -1,20 +1,51 @@
+// ZO-TASK:
+
+// Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
+// MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true
+
+function areParenthesesBalanced(input: string): boolean {
+  let balance = 0;
+
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === "(") {
+      balance++;
+    } else if (input[i] === ")") {
+      balance--;
+    }
+
+    // Agar qachondir balans manfiy bo'lsa, bu noto'g'ri joyda yopilgan qavs borligini bildiradi
+    if (balance < 0) {
+      return false;
+    }
+  }
+
+  // Oxirida balans 0 bo'lishi kerak
+  return balance === 0;
+}
+
+// Test
+console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
+console.log(areParenthesesBalanced("qavslar(notog'ri)joylashgan)(")); // false
+console.log(areParenthesesBalanced("balans(da)(emas")); // false
+console.log(areParenthesesBalanced("(to'g'ri(balansda))")); // true
+
 // Shunday function yozing, uni array va number parametri bolsin. Ikkinchi parametrda berilgan raqamli indexgacha arrayni orqasiga ogirib qaytarsin.
 // MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
 
-function rotateArray(arr: any[], index: number): any[] {
-  if (index < 0 || index >= arr.length) {
-    throw new Error("Index is out of bounds");
-  }
+// function rotateArray(arr: any[], index: number): any[] {
+//   if (index < 0 || index >= arr.length) {
+//     throw new Error("Index is out of bounds");
+//   }
 
-  // Arrayning oxiridan indexgacha bo'lgan qismini olib, boshiga qo'shamiz
-  const partToMove = arr.slice(-index);
-  const remainingPart = arr.slice(0, -index);
-  return partToMove.concat(remainingPart);
-}
+//   // Arrayning oxiridan indexgacha bo'lgan qismini olib, boshiga qo'shamiz
+//   const partToMove = arr.slice(-index);
+//   const remainingPart = arr.slice(0, -index);
+//   return partToMove.concat(remainingPart);
+// }
 
-// Misol:
-const result = rotateArray([1, 2, 3, 4, 5, 6], 3);
-console.log(result); // [5, 6, 1, 2, 3, 4]
+// // Misol:
+// const result = rotateArray([1, 2, 3, 4, 5, 6], 3);
+// console.log(result); // [5, 6, 1, 2, 3, 4]
 
 // Shunday function yozing, u function parametrga berilgan raqamlarni orqasiga ogirib qaytarsin.
 // MASALAN: reverseInteger(123456789) return 987654321
