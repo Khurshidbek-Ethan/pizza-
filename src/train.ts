@@ -1,33 +1,57 @@
-// ZO-TASK:
+/*
+ZP-TASK:
 
-// Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
-// MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true
+Shunday function yozing, u parametridagi 
+array ichida eng kop takrorlangan raqamni topib qaytarsin.
+MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
 
-function areParenthesesBalanced(input: string): boolean {
-  let balance = 0;
+@MITASK
+*/
 
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] === "(") {
-      balance++;
-    } else if (input[i] === ")") {
-      balance--;
-    }
+function majorityElement(arr: any) {
+  const counts = arr.reduce((acc: any, num: any) => {
+    acc[num] = (acc[num] || 0) + 1;
+    return acc;
+  }, {});
 
-    // Agar qachondir balans manfiy bo'lsa, bu noto'g'ri joyda yopilgan qavs borligini bildiradi
-    if (balance < 0) {
-      return false;
-    }
-  }
-
-  // Oxirida balans 0 bo'lishi kerak
-  return balance === 0;
+  return Object.keys(counts).reduce((a: any, b: any) =>
+    counts[a] > counts[b] ? a : b
+  );
 }
 
-// Test
-console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
-console.log(areParenthesesBalanced("qavslar(notog'ri)joylashgan)(")); // false
-console.log(areParenthesesBalanced("balans(da)(emas")); // false
-console.log(areParenthesesBalanced("(to'g'ri(balansda))")); // true
+const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
+console.log("result:", result);
+
+// // ZO-TASK:
+
+// // Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
+// // MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true
+
+// function areParenthesesBalanced(input: string): boolean {
+//   let balance = 0;
+
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] === "(") {
+//       balance++;
+//     } else if (input[i] === ")") {
+//       balance--;
+//     }
+
+//     // Agar qachondir balans manfiy bo'lsa, bu noto'g'ri joyda yopilgan qavs borligini bildiradi
+//     if (balance < 0) {
+//       return false;
+//     }
+//   }
+
+//   // Oxirida balans 0 bo'lishi kerak
+//   return balance === 0;
+// }
+
+// // Test
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
+// console.log(areParenthesesBalanced("qavslar(notog'ri)joylashgan)(")); // false
+// console.log(areParenthesesBalanced("balans(da)(emas")); // false
+// console.log(areParenthesesBalanced("(to'g'ri(balansda))")); // true
 
 // Shunday function yozing, uni array va number parametri bolsin. Ikkinchi parametrda berilgan raqamli indexgacha arrayni orqasiga ogirib qaytarsin.
 // MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
