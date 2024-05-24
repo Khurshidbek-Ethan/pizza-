@@ -1,3 +1,29 @@
+// Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
+// MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
+
+function findDuplicates(arr: number[]): number[] {
+  const counts: { [key: number]: number } = {};
+  const duplicates: number[] = [];
+
+  // Array ichidagi elementlarni sanab chiqamiz
+  for (const num of arr) {
+    counts[num] = (counts[num] || 0) + 1;
+  }
+
+  // 2 martadan ko'p marta kelgan elementlarni qidiramiz
+  for (const num in counts) {
+    if (counts[num] > 1) {
+      duplicates.push(Number(num));
+    }
+  }
+
+  return duplicates;
+}
+
+// Funksiyani sinab ko'ramiz
+const result = findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]);
+console.log(result); // [3, 4]
+
 /*
 ZP-TASK:
 
@@ -8,19 +34,19 @@ MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
 @MITASK
 */
 
-function majorityElement(arr: any) {
-  const counts = arr.reduce((acc: any, num: any) => {
-    acc[num] = (acc[num] || 0) + 1;
-    return acc;
-  }, {});
+// function majorityElement(arr: any) {
+//   const counts = arr.reduce((acc: any, num: any) => {
+//     acc[num] = (acc[num] || 0) + 1;
+//     return acc;
+//   }, {});
 
-  return Object.keys(counts).reduce((a: any, b: any) =>
-    counts[a] > counts[b] ? a : b
-  );
-}
+//   return Object.keys(counts).reduce((a: any, b: any) =>
+//     counts[a] > counts[b] ? a : b
+//   );
+// }
 
-const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
-console.log("result:", result);
+// const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 4]);
+// console.log("result:", result);
 
 // // ZO-TASK:
 
