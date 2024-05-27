@@ -1,28 +1,59 @@
+//ZR
+// Shunday function yozing, u parametridagi string ichidagi raqam va sonlarni sonini sanasin.
+// MASALAN: countNumberAndLetters(“string152%\¥”) return {number:3, letter:6}
+
+function countNumbersAndLetters(input: string): { number: number, letter: number } {
+    let numberCount = 0;
+    let letterCount = 0;
+
+    for (let char of input) {
+        if (char >= '0' && char <= '9') {
+            numberCount++;
+        } else if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+            letterCount++;
+        }
+    }
+
+    return {
+        number: numberCount,
+        letter: letterCount
+    };
+}
+
+// Misol uchun foydalanish:
+const result = countNumbersAndLetters("string152%\\¥");
+console.log(result);  // { number: 3, letter: 6 }
+
+
+
+
+
+
 // Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
 // MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
 
-function findDuplicates(arr: number[]): number[] {
-  const counts: { [key: number]: number } = {};
-  const duplicates: number[] = [];
+// function findDuplicates(arr: number[]): number[] {
+//   const counts: { [key: number]: number } = {};
+//   const duplicates: number[] = [];
 
-  // Array ichidagi elementlarni sanab chiqamiz
-  for (const num of arr) {
-    counts[num] = (counts[num] || 0) + 1;
-  }
+//   // Array ichidagi elementlarni sanab chiqamiz
+//   for (const num of arr) {
+//     counts[num] = (counts[num] || 0) + 1;
+//   }
 
-  // 2 martadan ko'p marta kelgan elementlarni qidiramiz
-  for (const num in counts) {
-    if (counts[num] > 1) {
-      duplicates.push(Number(num));
-    }
-  }
+//   // 2 martadan ko'p marta kelgan elementlarni qidiramiz
+//   for (const num in counts) {
+//     if (counts[num] > 1) {
+//       duplicates.push(Number(num));
+//     }
+//   }
 
-  return duplicates;
-}
+//   return duplicates;
+// }
 
-// Funksiyani sinab ko'ramiz
-const result = findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]);
-console.log(result); // [3, 4]
+// // Funksiyani sinab ko'ramiz
+// const result = findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]);
+// console.log(result); // [3, 4]
 
 /*
 ZP-TASK:
