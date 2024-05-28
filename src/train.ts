@@ -1,28 +1,58 @@
+
+// Shunday function yozing, u parametridagi arrayni ichidagi 1 marta kelgan elemnetni qaytarsin.
+// MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4
+
+function singleNumber(nums: number[]): number {
+    const numCount: { [key: number]: number } = {};
+
+    for (const num of nums) {
+        if (numCount[num] === undefined) {
+            numCount[num] = 1;
+        } else {
+            numCount[num]++;
+        }
+    }
+
+    for (const num in numCount) {
+        if (numCount[num] === 1) {
+            return parseInt(num);
+        }
+    }
+
+    throw new Error("No single number found");
+}
+
+// Test
+const result = singleNumber([4, 2, 1, 2, 1]);
+console.log(result); // Output: 4
+
+
+
 //ZR
 // Shunday function yozing, u parametridagi string ichidagi raqam va sonlarni sonini sanasin.
 // MASALAN: countNumberAndLetters(“string152%\¥”) return {number:3, letter:6}
 
-function countNumbersAndLetters(input: string): { number: number, letter: number } {
-    let numberCount = 0;
-    let letterCount = 0;
+// function countNumbersAndLetters(input: string): { number: number, letter: number } {
+//     let numberCount = 0;
+//     let letterCount = 0;
 
-    for (let char of input) {
-        if (char >= '0' && char <= '9') {
-            numberCount++;
-        } else if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
-            letterCount++;
-        }
-    }
+//     for (let char of input) {
+//         if (char >= '0' && char <= '9') {
+//             numberCount++;
+//         } else if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+//             letterCount++;
+//         }
+//     }
 
-    return {
-        number: numberCount,
-        letter: letterCount
-    };
-}
+//     return {
+//         number: numberCount,
+//         letter: letterCount
+//     };
+// }
 
-// Misol uchun foydalanish:
-const result = countNumbersAndLetters("string152%\\¥");
-console.log(result);  // { number: 3, letter: 6 }
+// // Misol uchun foydalanish:
+// const result = countNumbersAndLetters("string152%\\¥");
+// console.log(result);  // { number: 3, letter: 6 }
 
 
 
