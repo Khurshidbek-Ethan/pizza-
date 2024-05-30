@@ -1,30 +1,64 @@
+// Shunday function yozing, u parametridagi string ichida 1 martadan ortiq qaytarilmagan birinchi harf indeksini qaytarsin.
+// MASALAN: firstUniqueCharIndex(“stamp”) return 0
+
+function firstUniqueCharIndex(s: string): number {
+    const charCount: { [key: string]: number } = {};
+
+    // Har bir harfning nechta borligini sanaymiz
+    for (const char of s) {
+        if (charCount[char] !== undefined) {
+            charCount[char]++;
+        } else {
+            charCount[char] = 1;
+        }
+    }
+
+    // Birinchi marta bitta uchraydigan harfni topamiz
+    for (let i = 0; i < s.length; i++) {
+        if (charCount[s[i]] === 1) {
+            return i;
+        }
+    }
+
+    // Agar bunday harf topilmasa -1 qaytaramiz
+    return -1;
+}
+
+// Misollar:
+console.log(firstUniqueCharIndex("stamp")); // 0
+console.log(firstUniqueCharIndex("swiss")); // 0
+console.log(firstUniqueCharIndex("success")); // 4
+console.log(firstUniqueCharIndex("aabbcc")); // -1
+
+
+
 
 // Shunday function yozing, u parametridagi arrayni ichidagi 1 marta kelgan elemnetni qaytarsin.
 // MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4
 
-function singleNumber(nums: number[]): number {
-    const numCount: { [key: number]: number } = {};
+// function singleNumber(nums: number[]): number {
+//     const numCount: { [key: number]: number } = {};
 
-    for (const num of nums) {
-        if (numCount[num] === undefined) {
-            numCount[num] = 1;
-        } else {
-            numCount[num]++;
-        }
-    }
+//     for (const num of nums) {
+//         if (numCount[num] === undefined) {
+//             numCount[num] = 1;
+//         } else {
+//             numCount[num]++;
+//         }
+//     }
 
-    for (const num in numCount) {
-        if (numCount[num] === 1) {
-            return parseInt(num);
-        }
-    }
+//     for (const num in numCount) {
+//         if (numCount[num] === 1) {
+//             return parseInt(num);
+//         }
+//     }
 
-    throw new Error("No single number found");
-}
+//     throw new Error("No single number found");
+// }
 
-// Test
-const result = singleNumber([4, 2, 1, 2, 1]);
-console.log(result); // Output: 4
+// // Test
+// const result = singleNumber([4, 2, 1, 2, 1]);
+// console.log(result); // Output: 4
 
 
 
