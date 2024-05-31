@@ -1,34 +1,63 @@
+
+// Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yig'indisini qaytarsin.
+// MASALAN: sumOfUnique([1,2,3,2]) return 4
+
+function sumOfUnique(nums: number[]): number {
+    const numCount: { [key: number]: number } = {};
+
+    // Count occurrences of each number
+    for (const num of nums) {
+        numCount[num] = (numCount[num] || 0) + 1;
+    }
+
+    // Sum only unique numbers (numbers that appear exactly once)
+    let sum = 0;
+    for (const num in numCount) {
+        if (numCount[num] === 1) {
+            sum += Number(num);
+        }
+    }
+
+    return sum;
+}
+
+// Test
+console.log(sumOfUnique([1, 2, 3, 2])); // Output: 4
+
+
+
+
 // Shunday function yozing, u parametridagi string ichida 1 martadan ortiq qaytarilmagan birinchi harf indeksini qaytarsin.
 // MASALAN: firstUniqueCharIndex(“stamp”) return 0
 
-function firstUniqueCharIndex(s: string): number {
-    const charCount: { [key: string]: number } = {};
+// function firstUniqueCharIndex(s: string): number {
+//     const charCount: { [key: string]: number } = {};
 
-    // Har bir harfning nechta borligini sanaymiz
-    for (const char of s) {
-        if (charCount[char] !== undefined) {
-            charCount[char]++;
-        } else {
-            charCount[char] = 1;
-        }
-    }
+//     // Har bir harfning nechta borligini sanaymiz
+//     for (const char of s) {
+//         if (charCount[char] !== undefined) {
+//             charCount[char]++;
+//         } else {
+//             charCount[char] = 1;
+//         }
+//     }
 
-    // Birinchi marta bitta uchraydigan harfni topamiz
-    for (let i = 0; i < s.length; i++) {
-        if (charCount[s[i]] === 1) {
-            return i;
-        }
-    }
+//     // Birinchi marta bitta uchraydigan harfni topamiz
+//     for (let i = 0; i < s.length; i++) {
+//         if (charCount[s[i]] === 1) {
+//             return i;
+//         }
+//     }
 
-    // Agar bunday harf topilmasa -1 qaytaramiz
-    return -1;
-}
+//     // Agar bunday harf topilmasa -1 qaytaramiz
+//     return -1;
+// }
 
-// Misollar:
-console.log(firstUniqueCharIndex("stamp")); // 0
-console.log(firstUniqueCharIndex("swiss")); // 0
-console.log(firstUniqueCharIndex("success")); // 4
-console.log(firstUniqueCharIndex("aabbcc")); // -1
+// // Misollar:
+// console.log(firstUniqueCharIndex("stamp")); // 0
+// console.log(firstUniqueCharIndex("swiss")); // 0
+// console.log(firstUniqueCharIndex("success")); // 4
+// console.log(firstUniqueCharIndex("aabbcc")); // -1
 
 
 
