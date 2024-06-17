@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(-45deg, #110303f0, #dd6d04, #011c1afc, #7a6868);
+  background: linear-gradient(30deg, #ebeea5f0, #eec6a5, #b8f3edfc, #e8f7a5);
 }
 
 .home-container a {
@@ -15,7 +15,7 @@
 }
 
 .home-container .nav-item a {
-  color: #e3c08d;
+  color: #292724;
 }
 
 .home-container .nav-item a.disabled {
@@ -25,43 +25,30 @@
 .home-container .navigation-menu {
   position: relative;
   z-index: 10000;
-  color: #efefee;
+  color: #44443f;
   font-size: 40px;
   font-family: monospace;
 }
 
-.home-container .animation-frame {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 55px;
+
+
+.home-container.animation-frame  {
+  background-color: #fff;
 }
 
-.home-container .animation-wrapper {
-  position: relative;
-  width: 775px;
-  height: 775px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.home-container .animation-frame .bg  {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.home-container .sphere-animation {
-  position: relative;
-  width: 580px;
-  height: 580px;
+.home-container .animation-frame .bg  .path {
+  animation: draw 3.5s infinite;
 }
-
-.home-container .sphere path {
-  fill: url(#sphereGradient);
-  stroke-width: 1px;
-  stroke: rgba(80, 80, 80, 0.35);
-  backface-visibility: hidden;
-}
-
-@media (min-width: 500px) {
-  .sphere path {
-    stroke-width: 0.4px;
+ 
+ @keyframes draw {
+  50% {
+    stroke-dashoffset: 1;
   }
 }

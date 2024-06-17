@@ -2,27 +2,27 @@
 // Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yig'indisini qaytarsin.
 // MASALAN: sumOfUnique([1,2,3,2]) return 4
 
-function sumOfUnique(nums: number[]): number {
-    const numCount: { [key: number]: number } = {};
+// function sumOfUnique(nums: number[]): number {
+//     const numCount: { [key: number]: number } = {};
 
-    // Count occurrences of each number
-    for (const num of nums) {
-        numCount[num] = (numCount[num] || 0) + 1;
-    }
+//     // Count occurrences of each number
+//     for (const num of nums) {
+//         numCount[num] = (numCount[num] || 0) + 1;
+//     }
 
-    // Sum only unique numbers (numbers that appear exactly once)
-    let sum = 0;
-    for (const num in numCount) {
-        if (numCount[num] === 1) {
-            sum += Number(num);
-        }
-    }
+//     // Sum only unique numbers (numbers that appear exactly once)
+//     let sum = 0;
+//     for (const num in numCount) {
+//         if (numCount[num] === 1) {
+//             sum += Number(num);
+//         }
+//     }
 
-    return sum;
-}
+//     return sum;
+// }
 
-// Test
-console.log(sumOfUnique([1, 2, 3, 2])); // Output: 4
+// // Test
+// console.log(sumOfUnique([1, 2, 3, 2])); // Output: 4
 
 
 
