@@ -1,6 +1,8 @@
 import dotenv from "dotenv";
 // config methodni execute qilyabmz integration
-dotenv.config();
+dotenv.config({
+  path: process.env.NODE_ENV === "production" ? ".env.production" : ".env",
+});
 import mongoose from "mongoose";
 import server from "./app";
 
@@ -19,4 +21,3 @@ mongoose
   .catch((err) => {
     console.log("Error on connection MongoDB", err);
   });
-
