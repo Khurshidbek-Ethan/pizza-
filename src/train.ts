@@ -1,4 +1,20 @@
 
+/**
+ * PM2 COMMANDS:
+ * 
+ * pm2 ls
+ * pm2 start dist/server.js --name==PIZZA
+ * pm2 start "npm run start:prod" ->  pm2 start tarkibida npm run start:prod kamandasi orqali ham ishga tushirsek boladi
+ *  pm2 start "npm run start:prod" --name=PIZZA bu bn pm2 start dist/server.js --name==PIZZA birhil
+ * pm2 stop id -> yurib turgan loyihani stop qilib olishimiz kerak keyin delete qilishimiz kerak
+ * pm2 delete id -> stop qilgandan song delete kamandasini ishlatamiz 
+ * pm2 restart id
+ * pm2 monit terminaldan manitoring kamadasini ishga tushirish
+ * pm2 kill -> kamandsasi excute qilsak meni pm2 bogliq bolgan loyihalarimni pm2 dan tozalab beradi 
+ */
+
+
+
 // Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yig'indisini qaytarsin.
 // MASALAN: sumOfUnique([1,2,3,2]) return 4
 
